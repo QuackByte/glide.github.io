@@ -53,13 +53,12 @@ export const groups: Group[] = [
       {
         name: { en: 'Workspaces in use, in the menu bar or tray', es: 'Escritorios en uso, en la barra de menús o la bandeja' },
         mac: 'yes', windows: 'partial',
-        note: { en: 'The Windows tray icon shows the active workspace only.', es: 'El icono de la bandeja de Windows solo muestra el escritorio activo.' },
+        note: {
+          en: 'The Windows tray icon shows the active workspace; its tooltip and menu list all the workspaces in use.',
+          es: 'El icono de la bandeja de Windows muestra el escritorio activo; su información y su menú listan todos los escritorios en uso.',
+        },
       },
-      {
-        name: { en: 'Workspace numbers on screen when switching', es: 'Números de escritorio en pantalla al cambiar' },
-        mac: 'yes', windows: 'partial',
-        note: { en: 'Can’t be turned off on Windows yet.', es: 'Aún no se puede desactivar en Windows.' },
-      },
+      { name: { en: 'Workspace numbers on screen when switching', es: 'Números de escritorio en pantalla al cambiar' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Overview of every workspace, filtered by typing', es: 'Vista general de todos los escritorios, filtrable al escribir' }, mac: 'yes', windows: 'yes' },
       {
         name: { en: 'Live window previews in the overview', es: 'Vistas previas en directo en la vista general' },
@@ -88,7 +87,7 @@ export const groups: Group[] = [
       { name: { en: 'Gap between windows', es: 'Separación entre ventanas' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Focus ring in any color', es: 'Borde de foco de cualquier color' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Focus ring thickness', es: 'Grosor del borde de foco' }, mac: 'planned', windows: 'yes' },
-      { name: { en: 'Dim unfocused windows', es: 'Atenuar las ventanas sin foco' }, mac: 'yes', windows: 'planned' },
+      { name: { en: 'Dim unfocused windows', es: 'Atenuar las ventanas sin foco' }, mac: 'yes', windows: 'yes' },
     ],
   },
   {
