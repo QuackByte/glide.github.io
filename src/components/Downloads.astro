@@ -1,6 +1,6 @@
 ---
 import { repos, github, requirements } from '../config';
-import type { Lang } from '../i18n';
+import { href, type Lang } from '../i18n';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -20,6 +20,11 @@ const latest = (repo: string) => github(repo, '/releases/latest');
   <article class="download" data-platform="windows">
     <h3>Windows</h3>
     <p>{requirements.windows[lang]}. {es ? 'Se instala sin permisos de administrador.' : 'Installs without administrator rights.'}</p>
+    <p>
+      {es
+        ? <>Firma de código gratuita proporcionada por <a href="https://about.signpath.io/">SignPath.io</a>, certificado de <a href="https://signpath.org/">SignPath Foundation</a>. <a href={href('codeSigning', lang)}>Política de firma de código</a>.</>
+        : <>Free code signing provided by <a href="https://about.signpath.io/">SignPath.io</a>, certificate by <a href="https://signpath.org/">SignPath Foundation</a>. <a href={href('codeSigning', lang)}>Code signing policy</a>.</>}
+    </p>
     <p class="version" data-version hidden></p>
     <div class="actions">
       <a class="button" href={latest(repos.windows)} data-asset="-x64-Setup.exe">{es ? 'Descargar (x64)' : 'Download (x64)'}</a>
