@@ -6,7 +6,6 @@ The website for Glide, the scrolling window manager for [Mac](https://github.com
 | --- | --- | --- |
 | Home, downloads, Mac & Windows table | `/glide/` | `/glide/es/` |
 | Privacy policy | `/glide/privacy/` | `/glide/es/privacidad/` |
-| Code signing policy (for SignPath Foundation) | `/glide/code-signing/` | `/glide/es/firma-de-codigo/` |
 
 ## Downloads
 
