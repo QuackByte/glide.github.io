@@ -32,7 +32,7 @@ export const ui = {
     switchTo: 'Español',
     switchLabel: 'Leer en español',
     footer: {
-      madeBy: 'A Quackbyte app, made in Málaga.',
+      madeBy: 'A Quackbyte app.',
       license: 'Open source, MIT license',
       privacy: 'Privacy policy',
       codeSigning: 'Code signing policy',
@@ -44,7 +44,7 @@ export const ui = {
     switchTo: 'English',
     switchLabel: 'Read in English',
     footer: {
-      madeBy: 'Una app de Quackbyte, hecha en Málaga.',
+      madeBy: 'Una app de Quackbyte.',
       license: 'Código abierto, licencia MIT',
       privacy: 'Política de privacidad',
       codeSigning: 'Política de firma de código',
