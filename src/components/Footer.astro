@@ -1,0 +1,22 @@
+---
+import { owner, repos, github } from '../config';
+import { href, ui, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang].footer;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <p>
+    <a href={owner.brandUrl}>{t.madeBy}</a>
+    <a href={github(repos.mac, '/blob/main/LICENSE')}>{t.license}</a>
+    <span class="muted">© {year} {owner.brand}</span>
+  </p>
+  <ul>
+    <li><a href={github(repos.mac)}>Glide for Mac</a></li>
+    <li><a href={github(repos.windows)}>Glide for Windows</a></li>
+    <li><a href={href('privacy', lang)}>{t.privacy}</a></li>
+    <li><a href={href('codeSigning', lang)}>{t.codeSigning}</a></li>
+  </ul>
+</footer>

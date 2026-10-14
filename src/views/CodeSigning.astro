@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Prose from '../components/Prose.astro';
+import { owner, repos, github, policiesUpdated } from '../config';
+import { href, formatDate, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const date = formatDate(policiesUpdated, lang);
+---
+{lang === 'en' ? (
+<Base lang="en" route="codeSigning" title="Code signing policy | Glide" description="How Glide’s releases are built and signed.">
+  <Prose title="Code signing policy" updated={`Last updated ${date}`}>
+    <p class="contact">Free code signing provided by <a href="https://about.signpath.io/">SignPath.io</a>, certificate by <a href="https://signpath.org/">SignPath Foundation</a>.</p>
+
+    <h2>Windows</h2>
+    <p>Glide for Windows is signed through SignPath Foundation. Every release is built by GitHub Actions from the tagged source in <a href={github(repos.windows)}>{repos.windows}</a>; nothing built on a personal computer is signed. Signing covers Glide’s own executables and libraries and the installers. Each signing request is approved by hand.</p>
+
+    <h2>Mac</h2>
+    <p>Glide for Mac is signed with Quackbyte’s Apple Developer ID and notarized by Apple. Releases are built by GitHub Actions from the tagged source in <a href={github(repos.mac)}>{repos.mac}</a>, and updates are also signed with an EdDSA key that the app checks before it installs them.</p>
+
+    <h2>Team roles</h2>
+    <dl>
+      <dt>Committers and reviewers</dt><dd><a href={owner.maintainerUrl}>{owner.maintainer}</a></dd>
+      <dt>Approvers</dt><dd><a href={owner.maintainerUrl}>{owner.maintainer}</a></dd>
+    </dl>
+    <p>Contributions from anyone else come in as pull requests, which a reviewer checks before they’re merged.</p>
+
+    <h2>Privacy</h2>
+    <p>This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it, except for the update check: about once a day Glide asks GitHub whether there’s a newer release. It can be turned off in Settings. See the <a href={href('privacy', 'en')}>privacy policy</a>.</p>
+  </Prose>
+</Base>
+) : (
+<Base lang="es" route="codeSigning" title="Política de firma de código | Glide" description="Cómo se compilan y firman las versiones de Glide.">
+  <Prose title="Política de firma de código" updated={`Última actualización: ${date}`}>
+    <p class="contact">Firma de código gratuita proporcionada por <a href="https://about.signpath.io/">SignPath.io</a>, certificado de <a href="https://signpath.org/">SignPath Foundation</a>.</p>
+
+    <h2>Windows</h2>
+    <p>Glide para Windows se firma a través de SignPath Foundation. Cada versión la compila GitHub Actions a partir del código etiquetado en <a href={github(repos.windows)}>{repos.windows}</a>; no se firma nada compilado en un ordenador personal. Se firman los ejecutables y bibliotecas propios de Glide y los instaladores. Cada solicitud de firma se aprueba a mano.</p>
+
+    <h2>Mac</h2>
+    <p>Glide para Mac se firma con el Developer ID de Apple de Quackbyte y Apple lo notariza. Las versiones las compila GitHub Actions a partir del código etiquetado en <a href={github(repos.mac)}>{repos.mac}</a>, y las actualizaciones llevan además una firma EdDSA que la app comprueba antes de instalarlas.</p>
+
+    <h2>Roles del equipo</h2>
+    <dl>
+      <dt>Autores y revisores</dt><dd><a href={owner.maintainerUrl}>{owner.maintainer}</a></dd>
+      <dt>Aprobadores</dt><dd><a href={owner.maintainerUrl}>{owner.maintainer}</a></dd>
+    </dl>
+    <p>Las contribuciones de otras personas llegan como pull requests, que un revisor comprueba antes de integrarlas.</p>
+
+    <h2>Privacidad</h2>
+    <p>Este programa no transfiere información a otros sistemas en red salvo que lo pida expresamente el usuario o la persona que lo instala o lo usa, con una excepción: más o menos una vez al día Glide pregunta a GitHub si hay una versión nueva. Se puede desactivar en Ajustes. Consulta la <a href={href('privacy', 'es')}>política de privacidad</a>.</p>
+  </Prose>
+</Base>
+)}

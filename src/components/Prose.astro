@@ -1,0 +1,10 @@
+---
+interface Props { title: string; intro?: string; updated?: string }
+const { title, intro, updated } = Astro.props;
+---
+<article class="prose">
+  <h1>{title}</h1>
+  {updated && <p class="updated">{updated}</p>}
+  {intro && <p class="lede">{intro}</p>}
+  <slot />
+</article>

@@ -1,0 +1,31 @@
+---
+import type { Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+// Column widths as a share of the screen: ⅓, ½, ⅔ and friends.
+const columns = [
+  { width: 34 }, { width: 50, focus: true }, { width: 26, stack: true }, { width: 40 }, { width: 34 }, { width: 50 },
+];
+---
+<figure class="demo">
+  <div class="strip" role="img" aria-label={es
+    ? 'Columnas de ventanas en una tira horizontal que se desliza bajo la pantalla'
+    : 'Columns of windows on a horizontal strip sliding under the screen'}>
+    <div class="strip-track">
+      {columns.map((c) => (
+        <div class:list={['strip-col', { 'strip-col--stack': c.stack, 'is-focus': c.focus }]} style={`width: ${c.width}%`}>
+          {c.stack && <><i /><i /></>}
+        </div>
+      ))}
+    </div>
+    <div class="strip-rail"></div>
+    <div class="strip-thumb"></div>
+  </div>
+  <figcaption class="strip-keys">
+    <span><kbd>⌃⌥←</kbd> <kbd>⌃⌥→</kbd> Mac</span>
+    <span><kbd>Win+←</kbd> <kbd>Win+→</kbd> Windows</span>
+    <span>{es ? 'o desliza tres dedos' : 'or swipe three fingers'}</span>
+  </figcaption>
+</figure>

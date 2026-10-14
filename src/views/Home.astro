@@ -1,0 +1,122 @@
+---
+import Base from '../layouts/Base.astro';
+import StripDemo from '../components/StripDemo.astro';
+import Downloads from '../components/Downloads.astro';
+import Parity from '../components/Parity.astro';
+import { repos, github } from '../config';
+import { href, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+---
+<Base
+  lang={lang}
+  route="home"
+  title={es ? 'Glide: gestor de ventanas con desplazamiento para Mac y Windows' : 'Glide: a scrolling window manager for Mac and Windows'}
+  description={es
+    ? 'Glide coloca tus ventanas en columnas sobre una tira horizontal sin fin y te deslizas por ellas con el teclado. Gratis y de código abierto.'
+    : 'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard. Free and open source.'}
+>
+  <section class="hero">
+    <div>
+      <h1>{es ? 'Tus ventanas, en fila. Deslízate.' : 'Your windows, in a row. Glide.'}</h1>
+      <p class="lede">
+        {es
+          ? 'Glide coloca cada ventana en una columna de una tira horizontal sin fin y te mueve por ellas con el teclado o el trackpad. Sin ventanas encima de otras. Para Mac y Windows.'
+          : 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. No more windows piled on windows. For Mac and Windows.'}
+      </p>
+      <div class="actions">
+        <a class="button" href={href('home', lang, '#download')}>{es ? 'Descargar gratis' : 'Download free'}</a>
+        <a class="button button--quiet" href={github(repos.mac)}>GitHub</a>
+      </div>
+      <p class="meta">{es ? 'Código abierto, licencia MIT. Al estilo de niri y PaperWM.' : 'Open source, MIT license. In the style of niri and PaperWM.'}</p>
+    </div>
+    <StripDemo lang={lang} />
+  </section>
+
+  <section class="band" aria-labelledby="how">
+    <h2 id="how">{es ? 'Cómo funciona' : 'How it works'}</h2>
+    <ol class="steps">
+      <li>
+        <h3>{es ? 'Cada ventana, una columna' : 'Every window is a column'}</h3>
+        <p>{es
+          ? 'Las ventanas nuevas se abren a la derecha de la que usas. Las columnas ocupan toda la altura y tienen anchos fijos: ⅓, ½, ⅔ o completo.'
+          : 'New windows open to the right of the one you’re using. Columns fill the screen’s height in set widths: ⅓, ½, ⅔ or full.'}</p>
+      </li>
+      <li>
+        <h3>{es ? 'Deslízate por la tira' : 'Glide along the strip'}</h3>
+        <p>{es
+          ? 'Las flechas te llevan de columna en columna y la tira se desplaza lo justo para mostrar la que tiene el foco.'
+          : 'The arrow keys take you from column to column, and the strip scrolls just enough to show the one in focus.'}</p>
+      </li>
+      <li>
+        <h3>{es ? 'Ordena sin arrastrar' : 'Arrange without dragging'}</h3>
+        <p>{es
+          ? 'Añade Mayúsculas para llevarte la ventana. Apila ventanas en una columna, conviértelas en pestañas o envíalas a otro escritorio.'
+          : 'Add Shift to take the window with you. Stack windows in a column, turn them into tabs, or send them to another workspace.'}</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="band" aria-labelledby="why">
+    <h2 id="why">{es ? 'Hecho para el teclado' : 'Made for the keyboard'}</h2>
+    <div class="points">
+      <div>
+        <h3>{es ? 'Un acorde para todo' : 'One chord for everything'}</h3>
+        <p>{es
+          ? <>Todo empieza con <kbd>⌃⌥</kbd> en Mac y <kbd>Win</kbd> en Windows. Cada atajo se puede cambiar.</>
+          : <>Everything starts with <kbd>⌃⌥</kbd> on Mac and <kbd>Win</kbd> on Windows. Every shortcut can be changed.</>}</p>
+      </div>
+      <div>
+        <h3>{es ? 'Nueve escritorios y una vista general' : 'Nine workspaces and an overview'}</h3>
+        <p>{es
+          ? <>Cada escritorio es su propia tira. <kbd>⌃⌥O</kbd> o <kbd>Win+Tab</kbd> los muestran todos; escribe para buscar una ventana.</>
+          : <>Each workspace is its own strip. <kbd>⌃⌥O</kbd> or <kbd>Win+Tab</kbd> shows them all; type to find a window.</>}</p>
+      </div>
+      <div>
+        <h3>{es ? 'Nunca pierdes una ventana' : 'Never lose a window'}</h3>
+        <p>{es
+          ? 'Al desactivar Glide o salir, cada ventana vuelve a la pantalla. Si Glide falla, un vigilante hace lo mismo.'
+          : 'Turn Glide off or quit it and every window comes back on screen. If Glide crashes, a watchdog does the same.'}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="download" aria-labelledby="download-title">
+    <h2 id="download-title">{es ? 'Descargar' : 'Download'}</h2>
+    <Downloads lang={lang} />
+  </section>
+
+  <section class="band" id="platforms" aria-labelledby="platforms-title">
+    <h2 id="platforms-title">{es ? 'Mac y Windows' : 'Mac and Windows'}</h2>
+    <Parity lang={lang} />
+  </section>
+
+  <section class="band" aria-labelledby="open">
+    <h2 id="open">{es ? 'Código abierto' : 'Open source'}</h2>
+    <div class="points">
+      <div>
+        <h3>{es ? 'Léelo, cámbialo' : 'Read it, change it'}</h3>
+        <p>{es
+          ? <>Glide es gratis y de licencia MIT. El código está en GitHub: <a href={github(repos.mac)}>Mac</a> (Swift) y <a href={github(repos.windows)}>Windows</a> (C#).</>
+          : <>Glide is free and MIT licensed. The code is on GitHub: <a href={github(repos.mac)}>Mac</a> (Swift) and <a href={github(repos.windows)}>Windows</a> (C#).</>}</p>
+      </div>
+      <div>
+        <h3>{es ? 'Cuéntanos qué falla' : 'Tell us what breaks'}</h3>
+        <p>{es
+          ? <>Abre un issue en el repositorio de tu plataforma: <a href={github(repos.mac, '/issues')}>Mac</a> o <a href={github(repos.windows, '/issues')}>Windows</a>.</>
+          : <>Open an issue in your platform’s repository: <a href={github(repos.mac, '/issues')}>Mac</a> or <a href={github(repos.windows, '/issues')}>Windows</a>.</>}</p>
+      </div>
+      <div>
+        <h3>{es ? 'Nada sale de tu equipo' : 'Nothing leaves your computer'}</h3>
+        <p>
+          {es
+            ? 'Sin cuentas, analíticas ni rastreo. Glide solo pregunta a GitHub si hay una versión nueva. '
+            : 'No accounts, analytics or tracking. Glide only asks GitHub whether there’s a newer version. '}
+          <a href={href('privacy', lang)}>{es ? 'Política de privacidad' : 'Privacy policy'}</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

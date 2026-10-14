@@ -1,0 +1,21 @@
+---
+import { repos, github } from '../config';
+import { href, asset, ui, type Lang, type Route } from '../i18n';
+
+interface Props { lang: Lang; route: Route }
+const { lang, route } = Astro.props;
+const other: Lang = lang === 'en' ? 'es' : 'en';
+const t = ui[lang];
+---
+<header class="site-header">
+  <a class="brand" href={href('home', lang)}>
+    <img src={asset('app-icon.svg')} alt="" width="36" height="36" />
+    <span>Glide</span>
+  </a>
+  <nav aria-label={lang === 'es' ? 'Principal' : 'Main'}>
+    <a href={href('home', lang, '#download')}>{t.nav.download}</a>
+    <a href={href('home', lang, '#platforms')}>{t.nav.platforms}</a>
+    <a href={github(repos.mac)}>{t.nav.source}</a>
+    <a href={href(route, other)} hreflang={other} lang={other} aria-label={t.switchLabel}>{t.switchTo}</a>
+  </nav>
+</header>

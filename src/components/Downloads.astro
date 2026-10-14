@@ -1,0 +1,66 @@
+---
+import { repos, github, requirements } from '../config';
+import type { Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const es = lang === 'es';
+const latest = (repo: string) => github(repo, '/releases/latest');
+---
+<div class="downloads" data-downloads>
+  <article class="download" data-platform="mac">
+    <h3>Mac</h3>
+    <p>{requirements.mac[lang]}. {es ? 'Firmada y notarizada por Apple.' : 'Signed and notarized by Apple.'}</p>
+    <p class="version" data-version hidden></p>
+    <div class="actions">
+      <a class="button" href={latest(repos.mac)} data-asset="-macOS.zip">{es ? 'Descargar para Mac' : 'Download for Mac'}</a>
+      <a class="button button--quiet" href={github(repos.mac)}>{es ? 'Código fuente' : 'Source code'}</a>
+    </div>
+  </article>
+  <article class="download" data-platform="windows">
+    <h3>Windows</h3>
+    <p>{requirements.windows[lang]}. {es ? 'Se instala sin permisos de administrador.' : 'Installs without administrator rights.'}</p>
+    <p class="version" data-version hidden></p>
+    <div class="actions">
+      <a class="button" href={latest(repos.windows)} data-asset="-x64-Setup.exe">{es ? 'Descargar (x64)' : 'Download (x64)'}</a>
+      <a class="button button--quiet" href={latest(repos.windows)} data-asset="-arm64-Setup.exe">{es ? 'Descargar (Arm)' : 'Download (Arm)'}</a>
+      <a class="button button--quiet" href={github(repos.windows)}>{es ? 'Código fuente' : 'Source code'}</a>
+    </div>
+  </article>
+</div>
+<p class="meta muted">
+  {es
+    ? 'Las dos se actualizan solas. Cada versión, con sus notas y sumas de verificación, está en GitHub: '
+    : 'Both keep themselves up to date. Every release, with its notes and checksums, is on GitHub: '}
+  <a href={github(repos.mac, '/releases')}>Mac</a>, <a href={github(repos.windows, '/releases')}>Windows</a>.
+</p>
+
+<script>
+  // The buttons link to each repository's latest release page. Where GitHub answers, point them
+  // straight at the file and show the version; otherwise they keep working as they are.
+  const repos: Record<string, string> = { mac: 'QuackByte/glide', windows: 'QuackByte/glide-windows' };
+
+  type Release = { tag_name: string; assets: { name: string; browser_download_url: string }[] };
+
+  for (const card of document.querySelectorAll<HTMLElement>('[data-platform]')) {
+    const platform = card.dataset.platform!;
+    fetch(`https://api.github.com/repos/${repos[platform]}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } })
+      .then((response) => (response.ok ? (response.json() as Promise<Release>) : null))
+      .then((release) => {
+        if (!release) return;
+        for (const link of card.querySelectorAll<HTMLAnchorElement>('[data-asset]')) {
+          const asset = release.assets.find((a) => a.name.toLowerCase().endsWith(link.dataset.asset!.toLowerCase()));
+          if (asset) link.href = asset.browser_download_url;
+        }
+        const version = card.querySelector<HTMLElement>('[data-version]')!;
+        version.textContent = release.tag_name;
+        version.hidden = false;
+      })
+      .catch(() => {});
+  }
+
+  // Mark the visitor's own platform.
+  const ua = navigator.userAgent;
+  const mine = /Windows/.test(ua) ? 'windows' : /Mac OS X|Macintosh/.test(ua) ? 'mac' : null;
+  if (mine) document.querySelector(`[data-platform="${mine}"]`)?.classList.add('is-yours');
+</script>
