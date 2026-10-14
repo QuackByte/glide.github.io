@@ -4,7 +4,6 @@ export type Lang = (typeof langs)[number];
 export const routes = {
   home: { en: '', es: 'es/' },
   privacy: { en: 'privacy/', es: 'es/privacidad/' },
-  codeSigning: { en: 'code-signing/', es: 'es/firma-de-codigo/' },
 } as const;
 export type Route = keyof typeof routes;
 
@@ -35,7 +34,6 @@ export const ui = {
       madeBy: 'A Quackbyte app.',
       license: 'Open source, MIT license',
       privacy: 'Privacy policy',
-      codeSigning: 'Code signing policy',
     },
     skip: 'Skip to content',
   },
@@ -47,7 +45,6 @@ export const ui = {
       madeBy: 'Una app de Quackbyte.',
       license: 'Código abierto, licencia MIT',
       privacy: 'Política de privacidad',
-      codeSigning: 'Política de firma de código',
     },
     skip: 'Saltar al contenido',
   },

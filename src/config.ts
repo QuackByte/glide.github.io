@@ -18,5 +18,5 @@ export const owner = {
   maintainerUrl: 'https://github.com/jsanzdev',
 };
 
-/** Date shown as "Last updated" on the privacy policy and code signing policy. ISO format. */
+/** Date shown as "Last updated" on the privacy policy. ISO format. */
 export const policiesUpdated = '2026-10-14';
