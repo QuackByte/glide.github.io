@@ -52,10 +52,10 @@ export const groups: Group[] = [
       },
       {
         name: { en: 'Workspaces in use, in the menu bar or tray', es: 'Escritorios en uso, en la barra de menús o la bandeja' },
-        mac: 'yes', windows: 'partial',
+        mac: 'yes', windows: 'yes',
         note: {
-          en: 'The Windows tray icon shows the active workspace; its tooltip and menu list all the workspaces in use.',
-          es: 'El icono de la bandeja de Windows muestra el escritorio activo; su información y su menú listan todos los escritorios en uso.',
+          en: 'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
+          es: 'En Windows, el icono de la bandeja muestra una cuadrícula de 3×3 con los nueve escritorios, iluminando los que están en uso. Glide para Mac muestra sus números en la barra de menús.',
         },
       },
       { name: { en: 'Workspace numbers on screen when switching', es: 'Números de escritorio en pantalla al cambiar' }, mac: 'yes', windows: 'yes' },
