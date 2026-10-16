@@ -1,219 +1,218 @@
-// TODO: translate
-// de copy. See en.ts for how the strings, `Html` keys and {tokens} work.
+// German (Germany) copy. See en.ts for how the strings, `Html` keys and {tokens} work.
 
 import type { Messages } from './en';
 
 export const de: Messages = {
   site: {
-    skip: 'Skip to content',
+    skip: 'Zum Inhalt springen',
   },
   header: {
-    mainNav: 'Main',
+    mainNav: 'Hauptnavigation',
     download: 'Download',
     platforms: 'Mac & Windows',
-    source: 'Source',
+    source: 'Quellcode',
     // Label of the language picker; the language names themselves are never translated.
-    language: 'Language',
+    language: 'Sprache',
   },
   footer: {
-    madeBy: 'A Quackbyte app.',
-    license: 'Open source, MIT license',
-    privacy: 'Privacy policy',
+    madeBy: 'Eine App von Quackbyte.',
+    license: 'Open Source, MIT-Lizenz',
+    privacy: 'Datenschutzerklärung',
   },
 
   home: {
-    title: 'Glide: a scrolling window manager for Mac and Windows',
+    title: 'Glide: ein scrollender Fenstermanager für Mac und Windows',
     description:
-      'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard. Free and open source.',
+      'Glide ordnet deine Fenster als Spalten auf einem endlosen horizontalen Band an, über das du mit der Tastatur gleitest. Kostenlos und Open Source.',
     hero: {
-      title: 'Your windows, in a row. Glide.',
-      lede: 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. No more windows piled on windows. For Mac and Windows.',
-      download: 'Download free',
-      meta: 'Open source, MIT license. In the style of niri and PaperWM.',
+      title: 'Deine Fenster in einer Reihe. Glide.',
+      lede: 'Glide setzt jedes Fenster in eine Spalte auf einem endlosen horizontalen Band und bringt dich per Tastatur oder Trackpad von Fenster zu Fenster. Schluss mit Fenstern, die sich gegenseitig verdecken. Für Mac und Windows.',
+      download: 'Kostenlos herunterladen',
+      meta: 'Open Source, MIT-Lizenz. Im Stil von niri und PaperWM.',
     },
     how: {
-      title: 'How it works',
+      title: 'So funktioniert es',
       steps: [
         {
-          title: 'Every window is a column',
-          body: 'New windows open to the right of the one you’re using. Columns fill the screen’s height in set widths: ⅓, ½, ⅔ or full.',
+          title: 'Jedes Fenster ist eine Spalte',
+          body: 'Neue Fenster öffnen sich rechts neben dem, das du gerade benutzt. Die Spalten füllen die Bildschirmhöhe aus und haben feste Breiten: ⅓, ½, ⅔ oder volle Breite.',
         },
         {
-          title: 'Glide along the strip',
-          body: 'The arrow keys take you from column to column, and the strip scrolls just enough to show the one in focus.',
+          title: 'Entlang des Bands gleiten',
+          body: 'Mit den Pfeiltasten wechselst du von Spalte zu Spalte, und das Band scrollt gerade so weit, dass die fokussierte Spalte sichtbar ist.',
         },
         {
-          title: 'Arrange without dragging',
-          body: 'Add Shift to take the window with you. Stack windows in a column, turn them into tabs, or send them to another workspace.',
+          title: 'Anordnen ohne Ziehen',
+          body: 'Mit der Umschalttaste nimmst du das Fenster mit. Stapele Fenster in einer Spalte, verwandle sie in Tabs oder schicke sie in einen anderen Arbeitsbereich.',
         },
       ],
     },
     keyboard: {
-      title: 'Made for the keyboard',
+      title: 'Für die Tastatur gemacht',
       points: [
         {
-          title: 'One chord for everything',
-          bodyHtml: 'Everything starts with <kbd>{macMod}</kbd> on Mac and <kbd>{winKey}</kbd> on Windows. Every shortcut can be changed.',
+          title: 'Eine Modifikatortaste für alles',
+          bodyHtml: 'Alles beginnt mit <kbd>{macMod}</kbd> auf dem Mac und <kbd>{winKey}</kbd> unter Windows. Jedes Tastenkürzel lässt sich ändern.',
         },
         {
-          title: 'Nine workspaces and an overview',
+          title: 'Neun Arbeitsbereiche und eine Übersicht',
           bodyHtml:
-            'Each workspace is its own strip. <kbd>{macOverview}</kbd> or <kbd>{winOverview}</kbd> shows them all; type to find a window.',
+            'Jeder Arbeitsbereich hat sein eigenes Band. <kbd>{macOverview}</kbd> oder <kbd>{winOverview}</kbd> zeigt alle; tippe, um ein Fenster zu finden.',
         },
         {
-          title: 'Never lose a window',
-          bodyHtml: 'Turn Glide off or quit it and every window comes back on screen. If Glide crashes, a watchdog does the same.',
+          title: 'Nie wieder ein verlorenes Fenster',
+          bodyHtml: 'Schalte Glide aus oder beende es, und jedes Fenster kehrt auf den Bildschirm zurück. Stürzt Glide ab, erledigt das ein Wächterprozess.',
         },
       ],
     },
     downloadTitle: 'Download',
-    platformsTitle: 'Mac and Windows',
+    platformsTitle: 'Mac und Windows',
     open: {
-      title: 'Open source',
+      title: 'Open Source',
       points: [
         {
-          title: 'Read it, change it',
+          title: 'Lesen und ändern',
           bodyHtml:
-            'Glide is free and MIT licensed. The code is on GitHub: <a href="{mac}">Mac</a> (Swift) and <a href="{windows}">Windows</a> (C#).',
+            'Glide ist kostenlos und steht unter der MIT-Lizenz. Den Code findest du auf GitHub: <a href="{mac}">Mac</a> (Swift) und <a href="{windows}">Windows</a> (C#).',
         },
         {
-          title: 'Tell us what breaks',
+          title: 'Sag uns, was nicht funktioniert',
           bodyHtml:
-            'Open an issue in your platform’s repository: <a href="{macIssues}">Mac</a> or <a href="{windowsIssues}">Windows</a>.',
+            'Eröffne ein Issue im Repository deiner Plattform: <a href="{macIssues}">Mac</a> oder <a href="{windowsIssues}">Windows</a>.',
         },
         {
-          title: 'Nothing leaves your computer',
+          title: 'Nichts verlässt deinen Computer',
           bodyHtml:
-            'No accounts, analytics or tracking. Glide only asks GitHub whether there’s a newer version. <a href="{privacy}">Privacy policy</a>',
+            'Keine Konten, keine Analyse, kein Tracking. Glide fragt GitHub lediglich, ob es eine neuere Version gibt. <a href="{privacy}">Datenschutzerklärung</a>',
         },
       ],
     },
   },
 
   strip: {
-    label: 'Columns of windows on a horizontal strip sliding under the screen',
-    swipe: 'or swipe three fingers',
+    label: 'Fensterspalten auf einem horizontalen Band, das unter dem Bildschirm gleitet',
+    swipe: 'oder mit drei Fingern wischen',
   },
 
   downloads: {
-    macNote: 'macOS 27 or later, Apple silicon. Signed and notarized by Apple.',
-    macButton: 'Download for Mac',
-    windowsNote: 'Windows 11, x64 or Arm. Installs without administrator rights.',
-    windowsWarning: 'Not code-signed yet, so Windows SmartScreen may warn the first time: choose More info › Run anyway.',
+    macNote: 'macOS 27 oder neuer, Apple Silicon. Von Apple signiert und notarisiert.',
+    macButton: 'Für Mac herunterladen',
+    windowsNote: 'Windows 11, x64 oder Arm. Wird ohne Administratorrechte installiert.',
+    windowsWarning: 'Noch nicht codesigniert, daher warnt Windows SmartScreen beim ersten Mal eventuell: wähle „Weitere Informationen“ › „Trotzdem ausführen“.',
     windowsX64: 'Download (x64)',
     windowsArm: 'Download (Arm)',
-    source: 'Source code',
+    source: 'Quellcode',
     releasesHtml:
-      'Both keep themselves up to date. Every release, with its notes and checksums, is on GitHub: <a href="{macReleases}">Mac</a>, <a href="{windowsReleases}">Windows</a>.',
+      'Beide halten sich selbst aktuell. Jede Version mit Versionshinweisen und Prüfsummen findest du auf GitHub: <a href="{macReleases}">Mac</a>, <a href="{windowsReleases}">Windows</a>.',
   },
 
   parity: {
     caption:
-      'Glide for Mac and Glide for Windows share one engine and the same shortcuts ({macMod} on Mac, {winKey} on Windows). This is what each does today.',
-    feature: 'Feature',
+      'Glide für Mac und Glide für Windows teilen sich eine Engine und dieselben Tastenkürzel ({macMod} auf dem Mac, {winKey} unter Windows). So viel kann jedes von beiden heute.',
+    feature: 'Funktion',
     status: {
-      yes: 'Yes',
-      partial: 'Partly',
-      planned: 'Planned',
-      na: 'Not needed',
+      yes: 'Ja',
+      partial: 'Teilweise',
+      planned: 'Geplant',
+      na: 'Nicht nötig',
     },
   },
 
   features: {
     groups: {
-      tiling: 'Tiling',
-      workspaces: 'Workspaces and monitors',
-      input: 'Input',
-      appearance: 'Appearance',
-      behavior: 'Behavior',
+      tiling: 'Kacheln',
+      workspaces: 'Arbeitsbereiche und Monitore',
+      input: 'Eingabe',
+      appearance: 'Darstellung',
+      behavior: 'Verhalten',
     },
     names: {
-      columns: 'Columns on an endless horizontal strip',
-      stacks: 'Stacks: several windows in one column',
-      tabs: 'Tabbed columns',
-      widths: 'Width presets, full width and centering',
-      resize: 'Resize a column by dragging its edge',
-      floating: 'Floating windows',
-      slideAnimation: 'Slide animation',
-      dragWindow: 'Drag a window into a stack, tabs or another monitor',
-      nineWorkspaces: 'Nine workspaces',
-      everyMonitor: 'Every monitor tiled, with its own workspaces',
-      workspacesInUse: 'Workspaces in use, in the menu bar or tray',
-      workspaceNumbers: 'Workspace numbers on screen when switching',
-      overview: 'Overview of every workspace, filtered by typing',
-      livePreviews: 'Live window previews in the overview',
-      shortcuts: 'A shortcut for every action, all rebindable',
-      clashWarnings: 'Warnings for shortcuts that clash',
-      swipe: 'Three-finger swipe along the strip',
-      mouseWheel: 'Mouse wheel along the strip',
-      systemShortcuts: 'Take over the system’s window shortcuts',
-      gap: 'Gap between windows',
-      focusRingColor: 'Focus ring in any color',
-      focusRingThickness: 'Focus ring thickness',
-      dimUnfocused: 'Dim unfocused windows',
-      appRules: 'Per-app rules: float, tile, width, workspace',
-      reopenApps: 'Apps reopen where you keep them',
-      restoreWindows: 'Windows put back when tiling stops or Glide quits',
-      watchdog: 'Crash watchdog that puts windows back',
-      startAtLogin: 'Start at login',
-      autoUpdates: 'Automatic updates',
-      runAsAdmin: 'Manage apps running as administrator',
+      columns: 'Spalten auf einem endlosen horizontalen Band',
+      stacks: 'Stapel: mehrere Fenster in einer Spalte',
+      tabs: 'Spalten mit Tabs',
+      widths: 'Breitenvorgaben, volle Breite und Zentrieren',
+      resize: 'Spaltengröße durch Ziehen am Rand ändern',
+      floating: 'Schwebende Fenster',
+      slideAnimation: 'Gleitanimation',
+      dragWindow: 'Fenster in einen Stapel, in Tabs oder auf einen anderen Monitor ziehen',
+      nineWorkspaces: 'Neun Arbeitsbereiche',
+      everyMonitor: 'Jeder Monitor gekachelt, mit eigenen Arbeitsbereichen',
+      workspacesInUse: 'Genutzte Arbeitsbereiche in der Menüleiste oder im Infobereich',
+      workspaceNumbers: 'Arbeitsbereichsnummern beim Wechseln auf dem Bildschirm',
+      overview: 'Übersicht aller Arbeitsbereiche, durch Tippen filterbar',
+      livePreviews: 'Live-Vorschauen der Fenster in der Übersicht',
+      shortcuts: 'Ein Tastenkürzel für jede Aktion, alle anpassbar',
+      clashWarnings: 'Warnungen bei kollidierenden Tastenkürzeln',
+      swipe: 'Dreifingerwischen entlang des Bands',
+      mouseWheel: 'Mausrad entlang des Bands',
+      systemShortcuts: 'Fenster-Tastenkürzel des Systems übernehmen',
+      gap: 'Abstand zwischen Fenstern',
+      focusRingColor: 'Fokusrahmen in jeder Farbe',
+      focusRingThickness: 'Stärke des Fokusrahmens',
+      dimUnfocused: 'Inaktive Fenster abdunkeln',
+      appRules: 'Regeln pro App: schweben, kacheln, Breite, Arbeitsbereich',
+      reopenApps: 'Apps öffnen sich dort, wo du sie ablegst',
+      restoreWindows: 'Fenster kehren zurück, wenn das Kacheln endet oder Glide beendet wird',
+      watchdog: 'Absturzwächter, der Fenster zurückholt',
+      startAtLogin: 'Beim Anmelden starten',
+      autoUpdates: 'Automatische Updates',
+      runAsAdmin: 'Apps verwalten, die als Administrator laufen',
     },
     notes: {
       workspacesInUse:
-        'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
-      livePreviews: 'On Mac, with the Screen Recording permission; app icons without it.',
-      systemShortcuts: 'On Mac, Glide’s ⌃⌥ shortcuts don’t clash with macOS.',
-      runAsAdmin: 'Windows only: restart Glide as administrator.',
+        'Unter Windows zeigt das Symbol im Infobereich ein 3×3-Raster der neun Arbeitsbereiche, wobei die genutzten leuchten. Glide für Mac zeigt ihre Nummern in der Menüleiste.',
+      livePreviews: 'Auf dem Mac mit der Berechtigung „Bildschirmaufnahme“; ohne sie werden App-Symbole angezeigt.',
+      systemShortcuts: 'Auf dem Mac kollidieren die ⌃⌥-Tastenkürzel von Glide nicht mit macOS.',
+      runAsAdmin: 'Nur unter Windows: Glide als Administrator neu starten.',
     },
   },
 
   privacy: {
-    title: 'Privacy policy | Glide',
-    description: 'How Glide and this website handle your data: Glide collects none.',
-    heading: 'Privacy policy',
-    updated: 'Last updated {date}',
+    title: 'Datenschutzerklärung | Glide',
+    description: 'Wie Glide und diese Website mit deinen Daten umgehen: Glide erhebt keine.',
+    heading: 'Datenschutzerklärung',
+    updated: 'Zuletzt aktualisiert am {date}',
     intro:
-      'Glide doesn’t collect, store or share any personal data. Your layout, shortcuts and settings stay on your computer.',
+      'Glide erhebt, speichert und teilt keine personenbezogenen Daten. Deine Anordnung, Tastenkürzel und Einstellungen bleiben auf deinem Computer.',
     responsible: {
-      title: 'Who is responsible',
+      title: 'Verantwortlicher',
       bodyHtml:
-        'Glide is open-source software made by <a href="{maintainerUrl}">{maintainer}</a> as {brand}. For any privacy question, open an issue on <a href="{macIssues}">GitHub</a>.',
+        'Glide ist Open-Source-Software von <a href="{maintainerUrl}">{maintainer}</a> unter der Marke {brand}. Bei Fragen zum Datenschutz eröffne ein Issue auf <a href="{macIssues}">GitHub</a>.',
     },
     apps: {
-      title: 'The Glide apps',
+      title: 'Die Glide-Apps',
       stores: {
-        title: 'What they store',
+        title: 'Was sie speichern',
         bodyHtml:
-          'Your settings, shortcuts, app rules and window layout are saved only on your computer: in macOS’s preferences for Glide on Mac, and in <span class="path">{appData}</span> on Windows. Glide for Windows also keeps a log in <span class="path">{localAppData}</span>, which stays on your PC.',
+          'Deine Einstellungen, Tastenkürzel, App-Regeln und die Fensteranordnung werden nur auf deinem Computer gespeichert: in den Einstellungen von macOS für Glide auf dem Mac und in <span class="path">{appData}</span> unter Windows. Glide für Windows führt außerdem ein Protokoll in <span class="path">{localAppData}</span>, das auf deinem PC bleibt.',
       },
       updates: {
-        title: 'Update checks',
+        title: 'Update-Prüfungen',
         bodyHtml:
-          'To keep itself up to date, Glide asks GitHub about once a day whether there’s a newer release, and downloads it from GitHub when you install it. That request carries Glide’s version and, like any request, your IP address; nothing else is sent, and we don’t receive it. GitHub handles it under the <a href="{githubPrivacy}">GitHub General Privacy Statement</a>. Turn the check off in Glide’s Settings, under Updates.',
+          'Um sich aktuell zu halten, fragt Glide etwa einmal täglich bei GitHub nach, ob es eine neuere Version gibt, und lädt sie von GitHub herunter, wenn du sie installierst. Diese Anfrage enthält die Version von Glide und, wie jede Anfrage, deine IP-Adresse; sonst wird nichts gesendet, und wir erhalten sie nicht. GitHub verarbeitet sie gemäß der <a href="{githubPrivacy}">Allgemeinen Datenschutzerklärung von GitHub</a>. Schalte die Prüfung in den Einstellungen von Glide unter „Updates“ aus.',
       },
       doesNot: {
-        title: 'What the apps don’t do',
+        title: 'Was die Apps nicht tun',
         items: [
-          'They don’t collect personal data, usage data or identifiers.',
-          'They don’t include analytics, advertising or tracking of any kind.',
-          'They don’t read the contents of your windows or what you type. Glide watches only its own shortcuts.',
+          'Sie erheben keine personenbezogenen Daten, Nutzungsdaten oder Kennungen.',
+          'Sie enthalten keine Analyse-, Werbe- oder Tracking-Funktionen jeglicher Art.',
+          'Sie lesen weder den Inhalt deiner Fenster noch deine Eingaben. Glide überwacht nur seine eigenen Tastenkürzel.',
         ],
       },
       permissions: {
-        title: 'Permissions on Mac',
-        body: 'Glide needs the Accessibility permission to read window positions and move, resize and focus windows. Screen Recording is optional and only draws window previews in the overview; the images never leave your Mac.',
+        title: 'Berechtigungen auf dem Mac',
+        body: 'Glide benötigt die Berechtigung für die Bedienungshilfen, um Fensterpositionen zu lesen und Fenster zu bewegen, ihre Größe zu ändern und sie zu fokussieren. Die Bildschirmaufnahme ist optional und dient nur dazu, Fenstervorschauen in der Übersicht zu zeichnen; die Bilder verlassen deinen Mac nie.',
       },
     },
     website: {
-      title: 'This website',
+      title: 'Diese Website',
       bodyHtml:
-        'This website doesn’t use cookies, analytics or trackers, and its fonts are served from the same place as the site. It is hosted on GitHub Pages, and the download buttons ask GitHub for the latest release from your browser. GitHub may process your IP address in server logs for security and to deliver the site, as described in the <a href="{githubPrivacy}">GitHub General Privacy Statement</a>.',
+        'Diese Website verwendet keine Cookies, Analyse- oder Tracking-Dienste, und ihre Schriften werden vom selben Ort wie die Website ausgeliefert. Sie wird auf GitHub Pages gehostet, und die Download-Buttons fragen GitHub in deinem Browser nach der neuesten Version. GitHub kann deine IP-Adresse zur Sicherheit und zur Auslieferung der Website in Server-Logs verarbeiten, wie in der <a href="{githubPrivacy}">Allgemeinen Datenschutzerklärung von GitHub</a> beschrieben.',
     },
     rights: {
-      title: 'Your rights',
+      title: 'Deine Rechte',
       bodyHtml:
-        'Under the GDPR you can ask to access, correct or delete personal data we hold about you; since Glide sends us none, we normally hold none. You can also complain to the Spanish data protection authority, the <a href="{aepd}">Agencia Española de Protección de Datos</a>.',
+        'Nach der DSGVO kannst du Auskunft über personenbezogene Daten verlangen, die wir über dich gespeichert haben, sowie deren Berichtigung oder Löschung; da Glide uns keine sendet, haben wir normalerweise keine. Du kannst dich außerdem bei der spanischen Datenschutzbehörde beschweren, der <a href="{aepd}">Agencia Española de Protección de Datos</a>.',
     },
   },
 };

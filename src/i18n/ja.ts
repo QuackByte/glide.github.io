@@ -1,219 +1,219 @@
-// TODO: translate
-// ja copy. See en.ts for how the strings, `Html` keys and {tokens} work.
+// Japanese copy. See en.ts for how the strings, `Html` keys and {tokens} work.
 
 import type { Messages } from './en';
 
 export const ja: Messages = {
   site: {
-    skip: 'Skip to content',
+    skip: 'コンテンツへスキップ',
   },
   header: {
-    mainNav: 'Main',
-    download: 'Download',
-    platforms: 'Mac & Windows',
-    source: 'Source',
+    mainNav: 'メイン',
+    download: 'ダウンロード',
+    platforms: 'MacとWindows',
+    source: 'ソース',
     // Label of the language picker; the language names themselves are never translated.
-    language: 'Language',
+    language: '言語',
   },
   footer: {
-    madeBy: 'A Quackbyte app.',
-    license: 'Open source, MIT license',
-    privacy: 'Privacy policy',
+    madeBy: 'Quackbyteのアプリ',
+    license: 'オープンソース、MITライセンス',
+    privacy: 'プライバシーポリシー',
   },
 
   home: {
-    title: 'Glide: a scrolling window manager for Mac and Windows',
+    title: 'Glide：MacとWindows向けのスクロール式ウィンドウマネージャー',
     description:
-      'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard. Free and open source.',
+      'Glideは、ウィンドウを果てしなく続く横長のストリップ上に列として並べ、キーボードですべるように移動できるようにします。無料のオープンソースです。',
     hero: {
-      title: 'Your windows, in a row. Glide.',
-      lede: 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. No more windows piled on windows. For Mac and Windows.',
-      download: 'Download free',
-      meta: 'Open source, MIT license. In the style of niri and PaperWM.',
+      title: 'ウィンドウを、一列に。Glide。',
+      lede: 'Glideは、すべてのウィンドウを果てしなく続く横長のストリップ上の列に並べ、キーボードやトラックパッドで行き来できるようにします。ウィンドウが重なり合うことはもうありません。MacとWindowsに対応。',
+      download: '無料でダウンロード',
+      meta: 'オープンソース、MITライセンス。niriとPaperWMのスタイルを踏襲しています。',
     },
     how: {
-      title: 'How it works',
+      title: '仕組み',
       steps: [
         {
-          title: 'Every window is a column',
-          body: 'New windows open to the right of the one you’re using. Columns fill the screen’s height in set widths: ⅓, ½, ⅔ or full.',
+          title: 'ウィンドウごとに1列',
+          body: '新しいウィンドウは、使っているウィンドウの右側に開きます。列は画面の高さいっぱいに広がり、幅は⅓、½、⅔、全幅から選べます。',
         },
         {
-          title: 'Glide along the strip',
-          body: 'The arrow keys take you from column to column, and the strip scrolls just enough to show the one in focus.',
+          title: 'ストリップをすべるように移動',
+          body: '矢印キーで列から列へ移動すると、ストリップは、フォーカスのある列が見えるぶんだけスクロールします。',
         },
         {
-          title: 'Arrange without dragging',
-          body: 'Add Shift to take the window with you. Stack windows in a column, turn them into tabs, or send them to another workspace.',
+          title: 'ドラッグせずに整理',
+          body: 'Shiftを加えると、ウィンドウを持ったまま移動できます。ウィンドウを1つの列にスタックしたり、タブにしたり、別のワークスペースに送ったりできます。',
         },
       ],
     },
     keyboard: {
-      title: 'Made for the keyboard',
+      title: 'キーボードのために',
       points: [
         {
-          title: 'One chord for everything',
-          bodyHtml: 'Everything starts with <kbd>{macMod}</kbd> on Mac and <kbd>{winKey}</kbd> on Windows. Every shortcut can be changed.',
+          title: 'すべての操作を同じキーから',
+          bodyHtml: 'すべての操作は、Macでは<kbd>{macMod}</kbd>、Windowsでは<kbd>{winKey}</kbd>から始まります。ショートカットはすべて変更できます。',
         },
         {
-          title: 'Nine workspaces and an overview',
+          title: '9つのワークスペースとオーバービュー',
           bodyHtml:
-            'Each workspace is its own strip. <kbd>{macOverview}</kbd> or <kbd>{winOverview}</kbd> shows them all; type to find a window.',
+            'ワークスペースはそれぞれが独立したストリップです。<kbd>{macOverview}</kbd>または<kbd>{winOverview}</kbd>ですべてを表示でき、入力してウィンドウを探せます。',
         },
         {
-          title: 'Never lose a window',
-          bodyHtml: 'Turn Glide off or quit it and every window comes back on screen. If Glide crashes, a watchdog does the same.',
+          title: 'ウィンドウを見失いません',
+          bodyHtml: 'Glideをオフにするか終了すると、すべてのウィンドウが画面に戻ります。Glideが異常終了した場合も、監視機能が同じように戻します。',
         },
       ],
     },
-    downloadTitle: 'Download',
-    platformsTitle: 'Mac and Windows',
+    downloadTitle: 'ダウンロード',
+    platformsTitle: 'MacとWindows',
     open: {
-      title: 'Open source',
+      title: 'オープンソース',
       points: [
         {
-          title: 'Read it, change it',
+          title: '読んで、変えられます',
           bodyHtml:
-            'Glide is free and MIT licensed. The code is on GitHub: <a href="{mac}">Mac</a> (Swift) and <a href="{windows}">Windows</a> (C#).',
+            'Glideは無料で、MITライセンスです。コードはGitHubで公開しています：<a href="{mac}">Mac</a>（Swift）と<a href="{windows}">Windows</a>（C#）。',
         },
         {
-          title: 'Tell us what breaks',
+          title: '不具合はお知らせください',
           bodyHtml:
-            'Open an issue in your platform’s repository: <a href="{macIssues}">Mac</a> or <a href="{windowsIssues}">Windows</a>.',
+            'お使いのプラットフォームのリポジトリでissueを作成してください：<a href="{macIssues}">Mac</a>または<a href="{windowsIssues}">Windows</a>。',
         },
         {
-          title: 'Nothing leaves your computer',
+          title: 'データはコンピューターの外に出ません',
           bodyHtml:
-            'No accounts, analytics or tracking. Glide only asks GitHub whether there’s a newer version. <a href="{privacy}">Privacy policy</a>',
+            'アカウント、解析、トラッキングは一切ありません。Glideが行うのは、新しいバージョンがあるかをGitHubに問い合わせることだけです。<a href="{privacy}">プライバシーポリシー</a>',
         },
       ],
     },
   },
 
   strip: {
-    label: 'Columns of windows on a horizontal strip sliding under the screen',
-    swipe: 'or swipe three fingers',
+    label: '画面の下を横方向にスライドする、ストリップ上に並んだウィンドウの列',
+    swipe: 'または3本指でスワイプ',
   },
 
   downloads: {
-    macNote: 'macOS 27 or later, Apple silicon. Signed and notarized by Apple.',
-    macButton: 'Download for Mac',
-    windowsNote: 'Windows 11, x64 or Arm. Installs without administrator rights.',
-    windowsWarning: 'Not code-signed yet, so Windows SmartScreen may warn the first time: choose More info › Run anyway.',
-    windowsX64: 'Download (x64)',
-    windowsArm: 'Download (Arm)',
-    source: 'Source code',
+    macNote: 'macOS 27以降、Apple silicon。Appleによる署名と公証済み。',
+    macButton: 'Mac版をダウンロード',
+    windowsNote: 'Windows 11、x64またはArm。管理者権限なしでインストールできます。',
+    windowsWarning:
+      'まだコード署名されていないため、初回はWindows SmartScreenが警告を表示することがあります。その場合は、「詳細情報」›「実行」を選択してください。',
+    windowsX64: 'ダウンロード（x64）',
+    windowsArm: 'ダウンロード（Arm）',
+    source: 'ソースコード',
     releasesHtml:
-      'Both keep themselves up to date. Every release, with its notes and checksums, is on GitHub: <a href="{macReleases}">Mac</a>, <a href="{windowsReleases}">Windows</a>.',
+      'どちらも自動的に最新の状態に保たれます。リリースノートとチェックサムを含む全リリースは、GitHubで公開しています：<a href="{macReleases}">Mac</a>、<a href="{windowsReleases}">Windows</a>。',
   },
 
   parity: {
     caption:
-      'Glide for Mac and Glide for Windows share one engine and the same shortcuts ({macMod} on Mac, {winKey} on Windows). This is what each does today.',
-    feature: 'Feature',
+      'Mac版GlideとWindows版Glideは、同じエンジンと同じショートカット（Macでは{macMod}、Windowsでは{winKey}）を共有しています。ここでは、それぞれの現在の対応状況を示します。',
+    feature: '機能',
     status: {
-      yes: 'Yes',
-      partial: 'Partly',
-      planned: 'Planned',
-      na: 'Not needed',
+      yes: '対応',
+      partial: '一部対応',
+      planned: '予定',
+      na: '不要',
     },
   },
 
   features: {
     groups: {
-      tiling: 'Tiling',
-      workspaces: 'Workspaces and monitors',
-      input: 'Input',
-      appearance: 'Appearance',
-      behavior: 'Behavior',
+      tiling: 'タイル表示',
+      workspaces: 'ワークスペースとモニター',
+      input: '入力',
+      appearance: '外観',
+      behavior: '動作',
     },
     names: {
-      columns: 'Columns on an endless horizontal strip',
-      stacks: 'Stacks: several windows in one column',
-      tabs: 'Tabbed columns',
-      widths: 'Width presets, full width and centering',
-      resize: 'Resize a column by dragging its edge',
-      floating: 'Floating windows',
-      slideAnimation: 'Slide animation',
-      dragWindow: 'Drag a window into a stack, tabs or another monitor',
-      nineWorkspaces: 'Nine workspaces',
-      everyMonitor: 'Every monitor tiled, with its own workspaces',
-      workspacesInUse: 'Workspaces in use, in the menu bar or tray',
-      workspaceNumbers: 'Workspace numbers on screen when switching',
-      overview: 'Overview of every workspace, filtered by typing',
-      livePreviews: 'Live window previews in the overview',
-      shortcuts: 'A shortcut for every action, all rebindable',
-      clashWarnings: 'Warnings for shortcuts that clash',
-      swipe: 'Three-finger swipe along the strip',
-      mouseWheel: 'Mouse wheel along the strip',
-      systemShortcuts: 'Take over the system’s window shortcuts',
-      gap: 'Gap between windows',
-      focusRingColor: 'Focus ring in any color',
-      focusRingThickness: 'Focus ring thickness',
-      dimUnfocused: 'Dim unfocused windows',
-      appRules: 'Per-app rules: float, tile, width, workspace',
-      reopenApps: 'Apps reopen where you keep them',
-      restoreWindows: 'Windows put back when tiling stops or Glide quits',
-      watchdog: 'Crash watchdog that puts windows back',
-      startAtLogin: 'Start at login',
-      autoUpdates: 'Automatic updates',
-      runAsAdmin: 'Manage apps running as administrator',
+      columns: '果てしなく続く横長のストリップ上の列',
+      stacks: 'スタック：1つの列に複数のウィンドウ',
+      tabs: 'タブ付きの列',
+      widths: '幅のプリセット、全幅、中央配置',
+      resize: '端をドラッグして列の幅を変更',
+      floating: 'フローティングウィンドウ',
+      slideAnimation: 'スライドアニメーション',
+      dragWindow: 'ウィンドウをドラッグしてスタック、タブ、別のモニターへ',
+      nineWorkspaces: '9つのワークスペース',
+      everyMonitor: 'すべてのモニターでタイル表示、ワークスペースもモニターごと',
+      workspacesInUse: '使用中のワークスペースをメニューバーや通知領域に表示',
+      workspaceNumbers: '切り替え時にワークスペース番号を画面に表示',
+      overview: 'すべてのワークスペースのオーバービュー、入力で絞り込み',
+      livePreviews: 'オーバービューでウィンドウのライブプレビュー',
+      shortcuts: 'すべての操作にショートカット、すべて再割り当て可能',
+      clashWarnings: 'ショートカットの競合を警告',
+      swipe: '3本指のスワイプでストリップを移動',
+      mouseWheel: 'マウスホイールでストリップを移動',
+      systemShortcuts: 'システムのウィンドウ用ショートカットを置き換える',
+      gap: 'ウィンドウの間隔',
+      focusRingColor: '好きな色のフォーカスリング',
+      focusRingThickness: 'フォーカスリングの太さ',
+      dimUnfocused: 'フォーカスのないウィンドウを暗くする',
+      appRules: 'アプリごとのルール：フローティング、タイル表示、幅、ワークスペース',
+      reopenApps: 'アプリを前回の場所で再び開く',
+      restoreWindows: 'タイル表示の停止時やGlideの終了時にウィンドウを元に戻す',
+      watchdog: '異常終了時にウィンドウを元に戻す監視機能',
+      startAtLogin: 'ログイン時に開く',
+      autoUpdates: '自動アップデート',
+      runAsAdmin: '管理者として実行中のアプリを管理',
     },
     notes: {
       workspacesInUse:
-        'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
-      livePreviews: 'On Mac, with the Screen Recording permission; app icons without it.',
-      systemShortcuts: 'On Mac, Glide’s ⌃⌥ shortcuts don’t clash with macOS.',
-      runAsAdmin: 'Windows only: restart Glide as administrator.',
+        'Windowsでは、通知領域のアイコンに9つのワークスペースを3×3のグリッドで表示し、使用中のものが点灯します。Mac版Glideでは、メニューバーに番号を表示します。',
+      livePreviews: 'Macでは画面収録の許可が必要です。許可がない場合は、アプリのアイコンを表示します。',
+      systemShortcuts: 'Macでは、Glideの⌃⌥ショートカットはmacOSと競合しません。',
+      runAsAdmin: 'Windowsのみ：Glideを管理者として再起動してください。',
     },
   },
 
   privacy: {
-    title: 'Privacy policy | Glide',
-    description: 'How Glide and this website handle your data: Glide collects none.',
-    heading: 'Privacy policy',
-    updated: 'Last updated {date}',
+    title: 'プライバシーポリシー | Glide',
+    description: 'GlideとこのWebサイトによるデータの取り扱いについて：Glideはデータを一切収集しません。',
+    heading: 'プライバシーポリシー',
+    updated: '最終更新日：{date}',
     intro:
-      'Glide doesn’t collect, store or share any personal data. Your layout, shortcuts and settings stay on your computer.',
+      'Glideは、個人データを収集、保存、共有することはありません。レイアウト、ショートカット、設定は、お使いのコンピューター上にとどまります。',
     responsible: {
-      title: 'Who is responsible',
+      title: '責任者',
       bodyHtml:
-        'Glide is open-source software made by <a href="{maintainerUrl}">{maintainer}</a> as {brand}. For any privacy question, open an issue on <a href="{macIssues}">GitHub</a>.',
+        'Glideは、<a href="{maintainerUrl}">{maintainer}</a>が{brand}として開発したオープンソースソフトウェアです。プライバシーに関するご質問は、<a href="{macIssues}">GitHub</a>でissueを作成してください。',
     },
     apps: {
-      title: 'The Glide apps',
+      title: 'Glideアプリ',
       stores: {
-        title: 'What they store',
+        title: '保存するデータ',
         bodyHtml:
-          'Your settings, shortcuts, app rules and window layout are saved only on your computer: in macOS’s preferences for Glide on Mac, and in <span class="path">{appData}</span> on Windows. Glide for Windows also keeps a log in <span class="path">{localAppData}</span>, which stays on your PC.',
+          '設定、ショートカット、アプリのルール、ウィンドウのレイアウトは、お使いのコンピューター上にのみ保存されます。Mac版ではGlideのmacOS環境設定に、Windows版では<span class="path">{appData}</span>に保存されます。Windows版Glideは<span class="path">{localAppData}</span>にもログを保存しますが、これはお使いのPC上にとどまります。',
       },
       updates: {
-        title: 'Update checks',
+        title: '更新の確認',
         bodyHtml:
-          'To keep itself up to date, Glide asks GitHub about once a day whether there’s a newer release, and downloads it from GitHub when you install it. That request carries Glide’s version and, like any request, your IP address; nothing else is sent, and we don’t receive it. GitHub handles it under the <a href="{githubPrivacy}">GitHub General Privacy Statement</a>. Turn the check off in Glide’s Settings, under Updates.',
+          'Glideは最新の状態を保つため、1日に1回程度、新しいリリースがあるかどうかをGitHubに問い合わせ、インストール時にGitHubからダウンロードします。このリクエストには、Glideのバージョンと、通常のリクエストと同様にIPアドレスが含まれ、それ以外は送信されません。また、私たちがこれを受け取ることはありません。GitHubは、<a href="{githubPrivacy}">GitHub一般プライバシーに関する声明</a>に従ってこれを取り扱います。更新の確認は、Glideの設定の「アップデート」からオフにできます。',
       },
       doesNot: {
-        title: 'What the apps don’t do',
+        title: 'アプリが行わないこと',
         items: [
-          'They don’t collect personal data, usage data or identifiers.',
-          'They don’t include analytics, advertising or tracking of any kind.',
-          'They don’t read the contents of your windows or what you type. Glide watches only its own shortcuts.',
+          '個人データ、使用状況データ、識別子を収集しません。',
+          '解析、広告、あらゆる種類のトラッキングを含みません。',
+          'ウィンドウの内容や入力内容を読み取りません。Glideが監視するのは、自身のショートカットだけです。',
         ],
       },
       permissions: {
-        title: 'Permissions on Mac',
-        body: 'Glide needs the Accessibility permission to read window positions and move, resize and focus windows. Screen Recording is optional and only draws window previews in the overview; the images never leave your Mac.',
+        title: 'Macでの許可',
+        body: 'Glideは、ウィンドウの位置の取得と、ウィンドウの移動、サイズ変更、フォーカスのために、アクセシビリティの許可を必要とします。画面収録の許可は任意で、オーバービューのウィンドウプレビューを描画するためだけに使われます。画像がMacの外に出ることはありません。',
       },
     },
     website: {
-      title: 'This website',
+      title: 'このWebサイト',
       bodyHtml:
-        'This website doesn’t use cookies, analytics or trackers, and its fonts are served from the same place as the site. It is hosted on GitHub Pages, and the download buttons ask GitHub for the latest release from your browser. GitHub may process your IP address in server logs for security and to deliver the site, as described in the <a href="{githubPrivacy}">GitHub General Privacy Statement</a>.',
+        'このWebサイトは、Cookie、解析、トラッカーを使用しておらず、フォントもサイトと同じ場所から配信しています。サイトはGitHub Pagesでホストされており、ダウンロードボタンは、ブラウザーからGitHubに最新リリースを問い合わせます。GitHubは、セキュリティとサイトの配信のために、サーバーログでIPアドレスを処理することがあります。詳しくは<a href="{githubPrivacy}">GitHub一般プライバシーに関する声明</a>をご覧ください。',
     },
     rights: {
-      title: 'Your rights',
+      title: 'お客様の権利',
       bodyHtml:
-        'Under the GDPR you can ask to access, correct or delete personal data we hold about you; since Glide sends us none, we normally hold none. You can also complain to the Spanish data protection authority, the <a href="{aepd}">Agencia Española de Protección de Datos</a>.',
+        'GDPRに基づき、私たちが保有するお客様の個人データについて、開示、訂正、削除を求めることができます。Glideは個人データを一切送信しないため、通常、私たちは何も保有していません。また、スペインのデータ保護機関である<a href="{aepd}">Agencia Española de Protección de Datos</a>に苦情を申し立てることもできます。',
     },
   },
 };

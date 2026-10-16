@@ -1,219 +1,218 @@
-// TODO: translate
-// zh copy. See en.ts for how the strings, `Html` keys and {tokens} work.
+// Simplified Chinese (mainland China) copy. See en.ts for how the strings, `Html` keys and {tokens} work.
 
 import type { Messages } from './en';
 
 export const zh: Messages = {
   site: {
-    skip: 'Skip to content',
+    skip: '跳到内容',
   },
   header: {
-    mainNav: 'Main',
-    download: 'Download',
-    platforms: 'Mac & Windows',
-    source: 'Source',
+    mainNav: '主导航',
+    download: '下载',
+    platforms: 'Mac 和 Windows',
+    source: '源代码',
     // Label of the language picker; the language names themselves are never translated.
-    language: 'Language',
+    language: '语言',
   },
   footer: {
-    madeBy: 'A Quackbyte app.',
-    license: 'Open source, MIT license',
-    privacy: 'Privacy policy',
+    madeBy: 'Quackbyte 出品的 App。',
+    license: '开源，MIT 许可证',
+    privacy: '隐私政策',
   },
 
   home: {
-    title: 'Glide: a scrolling window manager for Mac and Windows',
+    title: 'Glide：适用于 Mac 和 Windows 的滚动式窗口管理器',
     description:
-      'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard. Free and open source.',
+      'Glide 把窗口排成一条无限延伸的横向条带上的多个列，用键盘就能在其中滑动穿梭。免费且开源。',
     hero: {
-      title: 'Your windows, in a row. Glide.',
-      lede: 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. No more windows piled on windows. For Mac and Windows.',
-      download: 'Download free',
-      meta: 'Open source, MIT license. In the style of niri and PaperWM.',
+      title: '窗口排成一行，轻松滑动。Glide。',
+      lede: 'Glide 把每个窗口放进无限延伸的横向条带上的一列，让你用键盘或触控板在窗口间穿梭。再也没有窗口层层堆叠的烦恼。适用于 Mac 和 Windows。',
+      download: '免费下载',
+      meta: '开源，MIT 许可证。灵感来自 niri 和 PaperWM。',
     },
     how: {
-      title: 'How it works',
+      title: '工作原理',
       steps: [
         {
-          title: 'Every window is a column',
-          body: 'New windows open to the right of the one you’re using. Columns fill the screen’s height in set widths: ⅓, ½, ⅔ or full.',
+          title: '每个窗口都是一列',
+          body: '新窗口会在你正在使用的窗口右侧打开。每一列都与屏幕等高，宽度可选固定值：⅓、½、⅔ 或全宽。',
         },
         {
-          title: 'Glide along the strip',
-          body: 'The arrow keys take you from column to column, and the strip scrolls just enough to show the one in focus.',
+          title: '沿着条带滑动',
+          body: '用方向键在各列之间切换，条带只会滚动到刚好显示出聚焦的那一列。',
         },
         {
-          title: 'Arrange without dragging',
-          body: 'Add Shift to take the window with you. Stack windows in a column, turn them into tabs, or send them to another workspace.',
+          title: '无需拖动即可整理',
+          body: '加按 Shift 就能带着窗口一起移动。你可以把多个窗口堆叠在一列中、变成标签页，或发送到另一个工作区。',
         },
       ],
     },
     keyboard: {
-      title: 'Made for the keyboard',
+      title: '为键盘而生',
       points: [
         {
-          title: 'One chord for everything',
-          bodyHtml: 'Everything starts with <kbd>{macMod}</kbd> on Mac and <kbd>{winKey}</kbd> on Windows. Every shortcut can be changed.',
+          title: '一组按键，掌控一切',
+          bodyHtml: '在 Mac 上以 <kbd>{macMod}</kbd> 开头，在 Windows 上以 <kbd>{winKey}</kbd> 开头。所有快捷键都可以更改。',
         },
         {
-          title: 'Nine workspaces and an overview',
+          title: '九个工作区和一个概览',
           bodyHtml:
-            'Each workspace is its own strip. <kbd>{macOverview}</kbd> or <kbd>{winOverview}</kbd> shows them all; type to find a window.',
+            '每个工作区都有自己的条带。按 <kbd>{macOverview}</kbd> 或 <kbd>{winOverview}</kbd> 即可查看全部，输入文字就能找到窗口。',
         },
         {
-          title: 'Never lose a window',
-          bodyHtml: 'Turn Glide off or quit it and every window comes back on screen. If Glide crashes, a watchdog does the same.',
+          title: '窗口绝不丢失',
+          bodyHtml: '关闭或退出 Glide 后，所有窗口都会回到屏幕上。即使 Glide 崩溃，看门狗程序也会做同样的事。',
         },
       ],
     },
-    downloadTitle: 'Download',
-    platformsTitle: 'Mac and Windows',
+    downloadTitle: '下载',
+    platformsTitle: 'Mac 和 Windows',
     open: {
-      title: 'Open source',
+      title: '开源',
       points: [
         {
-          title: 'Read it, change it',
+          title: '随意阅读，随意修改',
           bodyHtml:
-            'Glide is free and MIT licensed. The code is on GitHub: <a href="{mac}">Mac</a> (Swift) and <a href="{windows}">Windows</a> (C#).',
+            'Glide 免费，采用 MIT 许可证。代码托管在 GitHub 上：<a href="{mac}">Mac</a> 版（Swift）和 <a href="{windows}">Windows</a> 版（C#）。',
         },
         {
-          title: 'Tell us what breaks',
+          title: '出了问题请告诉我们',
           bodyHtml:
-            'Open an issue in your platform’s repository: <a href="{macIssues}">Mac</a> or <a href="{windowsIssues}">Windows</a>.',
+            '请在对应平台的仓库中提交 issue：<a href="{macIssues}">Mac</a> 或 <a href="{windowsIssues}">Windows</a>。',
         },
         {
-          title: 'Nothing leaves your computer',
+          title: '数据不会离开你的电脑',
           bodyHtml:
-            'No accounts, analytics or tracking. Glide only asks GitHub whether there’s a newer version. <a href="{privacy}">Privacy policy</a>',
+            '没有账户、数据分析或跟踪。Glide 只会向 GitHub 查询是否有新版本。<a href="{privacy}">隐私政策</a>',
         },
       ],
     },
   },
 
   strip: {
-    label: 'Columns of windows on a horizontal strip sliding under the screen',
-    swipe: 'or swipe three fingers',
+    label: '横向条带上的窗口列，在屏幕下方滑动',
+    swipe: '或用三指轻扫',
   },
 
   downloads: {
-    macNote: 'macOS 27 or later, Apple silicon. Signed and notarized by Apple.',
-    macButton: 'Download for Mac',
-    windowsNote: 'Windows 11, x64 or Arm. Installs without administrator rights.',
-    windowsWarning: 'Not code-signed yet, so Windows SmartScreen may warn the first time: choose More info › Run anyway.',
-    windowsX64: 'Download (x64)',
-    windowsArm: 'Download (Arm)',
-    source: 'Source code',
+    macNote: 'macOS 27 或更高版本，Apple 芯片。已由 Apple 签名并公证。',
+    macButton: '下载 Mac 版',
+    windowsNote: 'Windows 11，x64 或 Arm。无需管理员权限即可安装。',
+    windowsWarning: '尚未进行代码签名，因此首次运行时 Windows SmartScreen 可能会发出警告：请选择“更多信息”›“仍要运行”。',
+    windowsX64: '下载（x64）',
+    windowsArm: '下载（Arm）',
+    source: '源代码',
     releasesHtml:
-      'Both keep themselves up to date. Every release, with its notes and checksums, is on GitHub: <a href="{macReleases}">Mac</a>, <a href="{windowsReleases}">Windows</a>.',
+      '两个版本都会自动保持最新。每个版本的更新说明和校验和都发布在 GitHub 上：<a href="{macReleases}">Mac</a>、<a href="{windowsReleases}">Windows</a>。',
   },
 
   parity: {
     caption:
-      'Glide for Mac and Glide for Windows share one engine and the same shortcuts ({macMod} on Mac, {winKey} on Windows). This is what each does today.',
-    feature: 'Feature',
+      'Mac 版和 Windows 版 Glide 共用同一个引擎和同样的快捷键（Mac 上是 {macMod}，Windows 上是 {winKey}）。下表列出了两者目前各自支持的功能。',
+    feature: '功能',
     status: {
-      yes: 'Yes',
-      partial: 'Partly',
-      planned: 'Planned',
-      na: 'Not needed',
+      yes: '支持',
+      partial: '部分支持',
+      planned: '计划中',
+      na: '无需支持',
     },
   },
 
   features: {
     groups: {
-      tiling: 'Tiling',
-      workspaces: 'Workspaces and monitors',
-      input: 'Input',
-      appearance: 'Appearance',
-      behavior: 'Behavior',
+      tiling: '平铺',
+      workspaces: '工作区和显示器',
+      input: '输入',
+      appearance: '外观',
+      behavior: '行为',
     },
     names: {
-      columns: 'Columns on an endless horizontal strip',
-      stacks: 'Stacks: several windows in one column',
-      tabs: 'Tabbed columns',
-      widths: 'Width presets, full width and centering',
-      resize: 'Resize a column by dragging its edge',
-      floating: 'Floating windows',
-      slideAnimation: 'Slide animation',
-      dragWindow: 'Drag a window into a stack, tabs or another monitor',
-      nineWorkspaces: 'Nine workspaces',
-      everyMonitor: 'Every monitor tiled, with its own workspaces',
-      workspacesInUse: 'Workspaces in use, in the menu bar or tray',
-      workspaceNumbers: 'Workspace numbers on screen when switching',
-      overview: 'Overview of every workspace, filtered by typing',
-      livePreviews: 'Live window previews in the overview',
-      shortcuts: 'A shortcut for every action, all rebindable',
-      clashWarnings: 'Warnings for shortcuts that clash',
-      swipe: 'Three-finger swipe along the strip',
-      mouseWheel: 'Mouse wheel along the strip',
-      systemShortcuts: 'Take over the system’s window shortcuts',
-      gap: 'Gap between windows',
-      focusRingColor: 'Focus ring in any color',
-      focusRingThickness: 'Focus ring thickness',
-      dimUnfocused: 'Dim unfocused windows',
-      appRules: 'Per-app rules: float, tile, width, workspace',
-      reopenApps: 'Apps reopen where you keep them',
-      restoreWindows: 'Windows put back when tiling stops or Glide quits',
-      watchdog: 'Crash watchdog that puts windows back',
-      startAtLogin: 'Start at login',
-      autoUpdates: 'Automatic updates',
-      runAsAdmin: 'Manage apps running as administrator',
+      columns: '无限延伸的横向条带上的列',
+      stacks: '堆叠：多个窗口放在同一列',
+      tabs: '标签页列',
+      widths: '预设宽度、全宽和居中',
+      resize: '拖动列的边缘来调整大小',
+      floating: '浮动窗口',
+      slideAnimation: '滑动动画',
+      dragWindow: '将窗口拖入堆叠、标签页或另一个显示器',
+      nineWorkspaces: '九个工作区',
+      everyMonitor: '每个显示器都有平铺和各自的工作区',
+      workspacesInUse: '在菜单栏或通知区域中显示正在使用的工作区',
+      workspaceNumbers: '切换时在屏幕上显示工作区编号',
+      overview: '所有工作区的概览，输入文字即可筛选',
+      livePreviews: '概览中的实时窗口预览',
+      shortcuts: '每个操作都有快捷键，且均可重新设定',
+      clashWarnings: '快捷键冲突提示',
+      swipe: '三指轻扫沿条带滑动',
+      mouseWheel: '用鼠标滚轮沿条带滑动',
+      systemShortcuts: '接管系统的窗口快捷键',
+      gap: '窗口间距',
+      focusRingColor: '任意颜色的焦点环',
+      focusRingThickness: '焦点环粗细',
+      dimUnfocused: '调暗未聚焦的窗口',
+      appRules: '按 App 设置规则：浮动、平铺、宽度、工作区',
+      reopenApps: 'App 在你放置的位置重新打开',
+      restoreWindows: '停止平铺或退出 Glide 时窗口复位',
+      watchdog: '崩溃看门狗，让窗口复位',
+      startAtLogin: '登录时启动',
+      autoUpdates: '自动更新',
+      runAsAdmin: '管理以管理员身份运行的 App',
     },
     notes: {
       workspacesInUse:
-        'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
-      livePreviews: 'On Mac, with the Screen Recording permission; app icons without it.',
-      systemShortcuts: 'On Mac, Glide’s ⌃⌥ shortcuts don’t clash with macOS.',
-      runAsAdmin: 'Windows only: restart Glide as administrator.',
+        '在 Windows 上，通知区域图标会以 3×3 网格显示九个工作区，正在使用的会亮起。Mac 版 Glide 则在菜单栏中显示它们的编号。',
+      livePreviews: '在 Mac 上需要屏幕录制权限；没有该权限时显示 App 图标。',
+      systemShortcuts: '在 Mac 上，Glide 的 ⌃⌥ 快捷键不会与 macOS 冲突。',
+      runAsAdmin: '仅限 Windows：以管理员身份重新启动 Glide。',
     },
   },
 
   privacy: {
-    title: 'Privacy policy | Glide',
-    description: 'How Glide and this website handle your data: Glide collects none.',
-    heading: 'Privacy policy',
-    updated: 'Last updated {date}',
+    title: '隐私政策 | Glide',
+    description: 'Glide 和本网站如何处理你的数据：Glide 不收集任何数据。',
+    heading: '隐私政策',
+    updated: '最后更新于 {date}',
     intro:
-      'Glide doesn’t collect, store or share any personal data. Your layout, shortcuts and settings stay on your computer.',
+      'Glide 不会收集、存储或分享任何个人数据。你的布局、快捷键和设置都保存在你的电脑上。',
     responsible: {
-      title: 'Who is responsible',
+      title: '责任主体',
       bodyHtml:
-        'Glide is open-source software made by <a href="{maintainerUrl}">{maintainer}</a> as {brand}. For any privacy question, open an issue on <a href="{macIssues}">GitHub</a>.',
+        'Glide 是由 <a href="{maintainerUrl}">{maintainer}</a> 以 {brand} 名义开发的开源软件。如有任何隐私方面的问题，请在 <a href="{macIssues}">GitHub</a> 上提交 issue。',
     },
     apps: {
-      title: 'The Glide apps',
+      title: 'Glide App',
       stores: {
-        title: 'What they store',
+        title: '它们存储什么',
         bodyHtml:
-          'Your settings, shortcuts, app rules and window layout are saved only on your computer: in macOS’s preferences for Glide on Mac, and in <span class="path">{appData}</span> on Windows. Glide for Windows also keeps a log in <span class="path">{localAppData}</span>, which stays on your PC.',
+          '你的设置、快捷键、App 规则和窗口布局只保存在你的电脑上：Mac 版 Glide 保存在 macOS 的偏好设置中，Windows 版保存在 <span class="path">{appData}</span> 中。Windows 版 Glide 还会在 <span class="path">{localAppData}</span> 中保存一份日志，该日志只保留在你的电脑上。',
       },
       updates: {
-        title: 'Update checks',
+        title: '更新检查',
         bodyHtml:
-          'To keep itself up to date, Glide asks GitHub about once a day whether there’s a newer release, and downloads it from GitHub when you install it. That request carries Glide’s version and, like any request, your IP address; nothing else is sent, and we don’t receive it. GitHub handles it under the <a href="{githubPrivacy}">GitHub General Privacy Statement</a>. Turn the check off in Glide’s Settings, under Updates.',
+          '为保持自身为最新版本，Glide 大约每天向 GitHub 查询一次是否有新版本，并在你安装时从 GitHub 下载。该请求包含 Glide 的版本号，并且与任何请求一样会带有你的 IP 地址，除此之外不会发送任何其他内容，我们也不会收到这些信息。GitHub 会按照<a href="{githubPrivacy}">《GitHub 通用隐私声明》</a>处理该请求。你可以在 Glide 的“设置”中的“更新”下关闭此检查。',
       },
       doesNot: {
-        title: 'What the apps don’t do',
+        title: '这些 App 不会做什么',
         items: [
-          'They don’t collect personal data, usage data or identifiers.',
-          'They don’t include analytics, advertising or tracking of any kind.',
-          'They don’t read the contents of your windows or what you type. Glide watches only its own shortcuts.',
+          '它们不会收集个人数据、使用数据或标识符。',
+          '它们不包含任何形式的数据分析、广告或跟踪。',
+          '它们不会读取你窗口中的内容或你输入的内容。Glide 只监听自己的快捷键。',
         ],
       },
       permissions: {
-        title: 'Permissions on Mac',
-        body: 'Glide needs the Accessibility permission to read window positions and move, resize and focus windows. Screen Recording is optional and only draws window previews in the overview; the images never leave your Mac.',
+        title: 'Mac 上的权限',
+        body: 'Glide 需要辅助功能权限，以读取窗口位置，并移动窗口、调整窗口大小和让窗口获得焦点。屏幕录制权限是可选的，仅用于在概览中绘制窗口预览；这些图像不会离开你的 Mac。',
       },
     },
     website: {
-      title: 'This website',
+      title: '本网站',
       bodyHtml:
-        'This website doesn’t use cookies, analytics or trackers, and its fonts are served from the same place as the site. It is hosted on GitHub Pages, and the download buttons ask GitHub for the latest release from your browser. GitHub may process your IP address in server logs for security and to deliver the site, as described in the <a href="{githubPrivacy}">GitHub General Privacy Statement</a>.',
+        '本网站不使用 Cookie、数据分析或跟踪器，其字体也由网站自身提供。网站托管在 GitHub Pages 上，下载按钮会通过你的浏览器向 GitHub 请求最新版本。GitHub 可能会出于安全考虑并为了提供网站服务，在服务器日志中处理你的 IP 地址，详见<a href="{githubPrivacy}">《GitHub 通用隐私声明》</a>。',
     },
     rights: {
-      title: 'Your rights',
+      title: '你的权利',
       bodyHtml:
-        'Under the GDPR you can ask to access, correct or delete personal data we hold about you; since Glide sends us none, we normally hold none. You can also complain to the Spanish data protection authority, the <a href="{aepd}">Agencia Española de Protección de Datos</a>.',
+        '根据 GDPR，你可以要求访问、更正或删除我们持有的关于你的个人数据；由于 Glide 不会向我们发送任何数据，我们通常不持有任何数据。你也可以向西班牙数据保护机构 <a href="{aepd}">Agencia Española de Protección de Datos</a> 投诉。',
     },
   },
 };
