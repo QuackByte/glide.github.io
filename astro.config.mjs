@@ -8,7 +8,11 @@ export default defineConfig({
   trailingSlash: 'always',
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es'],
+    locales: [
+      'en', 'es', 'fr', 'de', 'ja', 'ko',
+      { path: 'zh', codes: ['zh-Hans'] },
+      { path: 'pt', codes: ['pt-BR'] },
+    ],
     routing: { prefixDefaultLocale: false },
   },
 });

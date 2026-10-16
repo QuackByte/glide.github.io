@@ -1,21 +1,42 @@
 ---
 import { repos, github } from '../config';
-import { href, asset, ui, type Lang, type Route } from '../i18n';
+import { href, asset, messages, langs, languages, type Lang, type Route } from '../i18n';
 
 interface Props { lang: Lang; route: Route }
 const { lang, route } = Astro.props;
-const other: Lang = lang === 'en' ? 'es' : 'en';
-const t = ui[lang];
+const t = messages[lang].header;
 ---
 <header class="site-header">
   <a class="brand" href={href('home', lang)}>
     <img src={asset('app-icon.svg')} alt="" width="36" height="36" />
     <span>Glide</span>
   </a>
-  <nav aria-label={lang === 'es' ? 'Principal' : 'Main'}>
-    <a href={href('home', lang, '#download')}>{t.nav.download}</a>
-    <a href={href('home', lang, '#platforms')}>{t.nav.platforms}</a>
-    <a href={github(repos.mac)}>{t.nav.source}</a>
-    <a href={href(route, other)} hreflang={other} lang={other} aria-label={t.switchLabel}>{t.switchTo}</a>
-  </nav>
+  <div class="header-end">
+    <nav aria-label={t.mainNav}>
+      <a href={href('home', lang, '#download')}>{t.download}</a>
+      <a href={href('home', lang, '#platforms')}>{t.platforms}</a>
+      <a href={github(repos.mac)}>{t.source}</a>
+    </nav>
+    <details class="lang-switch">
+      <summary aria-label={`${t.language}: ${languages[lang].name}`}>
+        <svg class="lang-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+        <span lang={languages[lang].htmlLang}>{languages[lang].name}</span>
+      </summary>
+      <ul>
+        {langs.map((l) => (
+          <li>
+            <a
+              href={href(route, l)}
+              hreflang={languages[l].htmlLang}
+              lang={languages[l].htmlLang}
+              aria-current={l === lang ? 'true' : undefined}
+            >{languages[l].name}</a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  </div>
 </header>
