@@ -37,7 +37,7 @@ export const groups: Group[] = [
       { name: { en: 'Slide animation', es: 'Animación de deslizamiento' }, mac: 'yes', windows: 'yes' },
       {
         name: { en: 'Drag a window into a stack, tabs or another monitor', es: 'Arrastrar una ventana a una pila, a pestañas o a otro monitor' },
-        mac: 'planned', windows: 'yes',
+        mac: 'yes', windows: 'yes',
       },
     ],
   },
@@ -47,8 +47,7 @@ export const groups: Group[] = [
       { name: { en: 'Nine workspaces', es: 'Nueve escritorios' }, mac: 'yes', windows: 'yes' },
       {
         name: { en: 'Every monitor tiled, with its own workspaces', es: 'Mosaico en cada monitor, con sus propios escritorios' },
-        mac: 'planned', windows: 'yes',
-        note: { en: 'Glide for Mac tiles the main display only.', es: 'Glide para Mac solo organiza la pantalla principal.' },
+        mac: 'yes', windows: 'yes',
       },
       {
         name: { en: 'Workspaces in use, in the menu bar or tray', es: 'Escritorios en uso, en la barra de menús o la bandeja' },
@@ -73,7 +72,7 @@ export const groups: Group[] = [
       { name: { en: 'A shortcut for every action, all rebindable', es: 'Un atajo para cada acción, todos reasignables' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Warnings for shortcuts that clash', es: 'Avisos de atajos que chocan' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Three-finger swipe along the strip', es: 'Deslizar con tres dedos por la tira' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Mouse wheel along the strip', es: 'Rueda del ratón por la tira' }, mac: 'planned', windows: 'yes' },
+      { name: { en: 'Mouse wheel along the strip', es: 'Rueda del ratón por la tira' }, mac: 'yes', windows: 'yes' },
       {
         name: { en: 'Take over the system’s window shortcuts', es: 'Sustituir los atajos de ventanas del sistema' },
         mac: 'na', windows: 'yes',
@@ -86,7 +85,7 @@ export const groups: Group[] = [
     features: [
       { name: { en: 'Gap between windows', es: 'Separación entre ventanas' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Focus ring in any color', es: 'Borde de foco de cualquier color' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Focus ring thickness', es: 'Grosor del borde de foco' }, mac: 'planned', windows: 'yes' },
+      { name: { en: 'Focus ring thickness', es: 'Grosor del borde de foco' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Dim unfocused windows', es: 'Atenuar las ventanas sin foco' }, mac: 'yes', windows: 'yes' },
     ],
   },
@@ -94,7 +93,7 @@ export const groups: Group[] = [
     name: { en: 'Behavior', es: 'Comportamiento' },
     features: [
       { name: { en: 'Per-app rules: float, tile, width, workspace', es: 'Reglas por app: flotar, mosaico, ancho, escritorio' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Apps reopen where you keep them', es: 'Las apps se reabren donde las tienes' }, mac: 'planned', windows: 'yes' },
+      { name: { en: 'Apps reopen where you keep them', es: 'Las apps se reabren donde las tienes' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Windows put back when tiling stops or Glide quits', es: 'Ventanas devueltas al parar el mosaico o salir' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Crash watchdog that puts windows back', es: 'Vigilante que recoloca las ventanas si Glide falla' }, mac: 'yes', windows: 'yes' },
       { name: { en: 'Start at login', es: 'Abrir al iniciar sesión' }, mac: 'yes', windows: 'yes' },
