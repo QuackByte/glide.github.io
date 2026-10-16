@@ -1,65 +1,35 @@
 ---
 import Base from '../layouts/Base.astro';
 import Prose from '../components/Prose.astro';
-import { owner, repos, github, policiesUpdated } from '../config';
-import { formatDate, type Lang } from '../i18n';
+import { policiesUpdated } from '../config';
+import { formatDate, messages, filler, type Lang } from '../i18n';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const date = formatDate(policiesUpdated, lang);
+const t = messages[lang].privacy;
+const fill = filler(lang, { date: formatDate(policiesUpdated, lang) });
 ---
-{lang === 'en' ? (
-<Base lang="en" route="privacy" title="Privacy policy | Glide" description="How Glide and this website handle your data: Glide collects none.">
-  <Prose title="Privacy policy" updated={`Last updated ${date}`} intro="Glide doesn’t collect, store or share any personal data. Your layout, shortcuts and settings stay on your computer.">
-    <h2>Who is responsible</h2>
-    <p>Glide is open-source software made by <a href={owner.maintainerUrl}>{owner.maintainer}</a> as {owner.brand}. For any privacy question, open an issue on <a href={github(repos.mac, '/issues')}>GitHub</a>.</p>
+<Base lang={lang} route="privacy" title={t.title} description={t.description}>
+  <Prose title={t.heading} updated={fill(t.updated)} intro={t.intro}>
+    <h2>{t.responsible.title}</h2>
+    <p set:html={fill(t.responsible.bodyHtml)} />
 
-    <h2>The Glide apps</h2>
-    <h3>What they store</h3>
-    <p>Your settings, shortcuts, app rules and window layout are saved only on your computer: in macOS’s preferences for Glide on Mac, and in <span class="path">%APPDATA%\Glide</span> on Windows. Glide for Windows also keeps a log in <span class="path">%LOCALAPPDATA%\Glide</span>, which stays on your PC.</p>
-    <h3>Update checks</h3>
-    <p>To keep itself up to date, Glide asks GitHub about once a day whether there’s a newer release, and downloads it from GitHub when you install it. That request carries Glide’s version and, like any request, your IP address; nothing else is sent, and we don’t receive it. GitHub handles it under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. Turn the check off in Glide’s Settings, under Updates.</p>
-    <h3>What the apps don’t do</h3>
+    <h2>{t.apps.title}</h2>
+    <h3>{t.apps.stores.title}</h3>
+    <p set:html={fill(t.apps.stores.bodyHtml)} />
+    <h3>{t.apps.updates.title}</h3>
+    <p set:html={fill(t.apps.updates.bodyHtml)} />
+    <h3>{t.apps.doesNot.title}</h3>
     <ul>
-      <li>They don’t collect personal data, usage data or identifiers.</li>
-      <li>They don’t include analytics, advertising or tracking of any kind.</li>
-      <li>They don’t read the contents of your windows or what you type. Glide watches only its own shortcuts.</li>
+      {t.apps.doesNot.items.map((item) => <li>{item}</li>)}
     </ul>
-    <h3>Permissions on Mac</h3>
-    <p>Glide needs the Accessibility permission to read window positions and move, resize and focus windows. Screen Recording is optional and only draws window previews in the overview; the images never leave your Mac.</p>
+    <h3>{t.apps.permissions.title}</h3>
+    <p>{t.apps.permissions.body}</p>
 
-    <h2>This website</h2>
-    <p>This website doesn’t use cookies, analytics or trackers, and its fonts are served from the same place as the site. It is hosted on GitHub Pages, and the download buttons ask GitHub for the latest release from your browser. GitHub may process your IP address in server logs for security and to deliver the site, as described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
+    <h2>{t.website.title}</h2>
+    <p set:html={fill(t.website.bodyHtml)} />
 
-    <h2>Your rights</h2>
-    <p>Under the GDPR you can ask to access, correct or delete personal data we hold about you; since Glide sends us none, we normally hold none. You can also complain to the Spanish data protection authority, the <a href="https://www.aepd.es/">Agencia Española de Protección de Datos</a>.</p>
+    <h2>{t.rights.title}</h2>
+    <p set:html={fill(t.rights.bodyHtml)} />
   </Prose>
 </Base>
-) : (
-<Base lang="es" route="privacy" title="Política de privacidad | Glide" description="Cómo tratan tus datos Glide y esta web: Glide no recopila ninguno.">
-  <Prose title="Política de privacidad" updated={`Última actualización: ${date}`} intro="Glide no recopila, guarda ni comparte datos personales. Tu disposición, tus atajos y tus ajustes se quedan en tu equipo.">
-    <h2>Responsable</h2>
-    <p>Glide es software de código abierto hecho por <a href={owner.maintainerUrl}>{owner.maintainer}</a> como {owner.brand}. Para cualquier duda de privacidad, abre un issue en <a href={github(repos.mac, '/issues')}>GitHub</a>.</p>
-
-    <h2>Las apps de Glide</h2>
-    <h3>Qué guardan</h3>
-    <p>Tus ajustes, atajos, reglas de apps y disposición de ventanas se guardan solo en tu equipo: en las preferencias de macOS para Glide en Mac, y en <span class="path">%APPDATA%\Glide</span> en Windows. Glide para Windows también guarda un registro en <span class="path">%LOCALAPPDATA%\Glide</span>, que no sale de tu PC.</p>
-    <h3>Comprobación de actualizaciones</h3>
-    <p>Para mantenerse al día, Glide pregunta a GitHub más o menos una vez al día si hay una versión nueva, y la descarga de GitHub cuando la instalas. Esa petición lleva la versión de Glide y, como cualquier petición, tu dirección IP; no se envía nada más y nosotros no la recibimos. GitHub la trata según su <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">declaración de privacidad</a>. Puedes desactivarla en los Ajustes de Glide, en Actualizaciones.</p>
-    <h3>Qué no hacen</h3>
-    <ul>
-      <li>No recopilan datos personales, de uso ni identificadores.</li>
-      <li>No incluyen analíticas, publicidad ni rastreo de ningún tipo.</li>
-      <li>No leen el contenido de tus ventanas ni lo que escribes. Glide solo atiende a sus propios atajos.</li>
-    </ul>
-    <h3>Permisos en Mac</h3>
-    <p>Glide necesita el permiso de Accesibilidad para leer la posición de las ventanas y moverlas, cambiar su tamaño y darles el foco. Grabación de pantalla es opcional y solo sirve para las vistas previas de la vista general; las imágenes no salen de tu Mac.</p>
-
-    <h2>Esta web</h2>
-    <p>Esta web no usa cookies, analíticas ni rastreadores, y sus fuentes se sirven desde el mismo sitio. Está alojada en GitHub Pages, y los botones de descarga preguntan a GitHub por la última versión desde tu navegador. GitHub puede tratar tu dirección IP en sus registros por seguridad y para servir la web, como explica su <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">declaración de privacidad</a>.</p>
-
-    <h2>Tus derechos</h2>
-    <p>Según el RGPD puedes pedir acceso, rectificación o supresión de los datos personales que tengamos sobre ti; como Glide no nos envía ninguno, normalmente no tenemos ninguno. También puedes reclamar ante la <a href="https://www.aepd.es/">Agencia Española de Protección de Datos</a>.</p>
-  </Prose>
-</Base>
-)}

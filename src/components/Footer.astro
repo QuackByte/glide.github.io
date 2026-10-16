@@ -1,10 +1,10 @@
 ---
 import { owner, repos, github } from '../config';
-import { href, ui, type Lang } from '../i18n';
+import { href, messages, type Lang } from '../i18n';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const t = ui[lang].footer;
+const t = messages[lang].footer;
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">

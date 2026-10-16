@@ -1,8 +1,14 @@
 // What Glide does on each platform: the one place to track parity between the macOS and Windows
 // apps. The home page renders it as the "Mac & Windows" table.
 //
+// This file holds the ids and the statuses. The visible text (group names, feature names and
+// notes) lives in the message files, src/i18n/<lang>.ts, under `features.groups`,
+// `features.names` and `features.notes`, keyed by the ids below.
+//
 // When a feature lands on one platform, add it here (as 'planned' on the other if it should
-// follow). When it lands on the other, flip it to 'yes'.
+// follow), then add its name to src/i18n/en.ts (and a note, if `note: true`). The other
+// languages won't type-check until they have the new key too. When it lands on the other
+// platform, flip it to 'yes'.
 
 /**
  * yes: works. partial: works with a difference worth reading the note for.
@@ -10,99 +16,80 @@
  */
 export type Status = 'yes' | 'partial' | 'planned' | 'na';
 
-type Text = { en: string; es: string };
-
-export interface Feature {
-  name: Text;
+interface FeatureDef {
+  id: string;
   mac: Status;
   windows: Status;
-  note?: Text;
+  /** The feature has a note in the message files (`features.notes[id]`). */
+  note?: true;
 }
 
-export interface Group {
-  name: Text;
-  features: Feature[];
+interface GroupDef {
+  id: string;
+  features: readonly FeatureDef[];
 }
 
-export const groups: Group[] = [
+export const groups = [
   {
-    name: { en: 'Tiling', es: 'Mosaico' },
+    id: 'tiling',
     features: [
-      { name: { en: 'Columns on an endless horizontal strip', es: 'Columnas en una tira horizontal sin fin' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Stacks: several windows in one column', es: 'Pilas: varias ventanas en una columna' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Tabbed columns', es: 'Columnas con pestañas' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Width presets, full width and centering', es: 'Anchos predefinidos, ancho completo y centrado' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Resize a column by dragging its edge', es: 'Cambiar el ancho arrastrando el borde' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Floating windows', es: 'Ventanas flotantes' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Slide animation', es: 'Animación de deslizamiento' }, mac: 'yes', windows: 'yes' },
-      {
-        name: { en: 'Drag a window into a stack, tabs or another monitor', es: 'Arrastrar una ventana a una pila, a pestañas o a otro monitor' },
-        mac: 'yes', windows: 'yes',
-      },
+      { id: 'columns', mac: 'yes', windows: 'yes' },
+      { id: 'stacks', mac: 'yes', windows: 'yes' },
+      { id: 'tabs', mac: 'yes', windows: 'yes' },
+      { id: 'widths', mac: 'yes', windows: 'yes' },
+      { id: 'resize', mac: 'yes', windows: 'yes' },
+      { id: 'floating', mac: 'yes', windows: 'yes' },
+      { id: 'slideAnimation', mac: 'yes', windows: 'yes' },
+      { id: 'dragWindow', mac: 'yes', windows: 'yes' },
     ],
   },
   {
-    name: { en: 'Workspaces and monitors', es: 'Escritorios y monitores' },
+    id: 'workspaces',
     features: [
-      { name: { en: 'Nine workspaces', es: 'Nueve escritorios' }, mac: 'yes', windows: 'yes' },
-      {
-        name: { en: 'Every monitor tiled, with its own workspaces', es: 'Mosaico en cada monitor, con sus propios escritorios' },
-        mac: 'yes', windows: 'yes',
-      },
-      {
-        name: { en: 'Workspaces in use, in the menu bar or tray', es: 'Escritorios en uso, en la barra de menús o la bandeja' },
-        mac: 'yes', windows: 'yes',
-        note: {
-          en: 'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
-          es: 'En Windows, el icono de la bandeja muestra una cuadrícula de 3×3 con los nueve escritorios, iluminando los que están en uso. Glide para Mac muestra sus números en la barra de menús.',
-        },
-      },
-      { name: { en: 'Workspace numbers on screen when switching', es: 'Números de escritorio en pantalla al cambiar' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Overview of every workspace, filtered by typing', es: 'Vista general de todos los escritorios, filtrable al escribir' }, mac: 'yes', windows: 'yes' },
-      {
-        name: { en: 'Live window previews in the overview', es: 'Vistas previas en directo en la vista general' },
-        mac: 'partial', windows: 'yes',
-        note: { en: 'On Mac, with the Screen Recording permission; app icons without it.', es: 'En Mac, con el permiso de Grabación de pantalla; iconos de app sin él.' },
-      },
+      { id: 'nineWorkspaces', mac: 'yes', windows: 'yes' },
+      { id: 'everyMonitor', mac: 'yes', windows: 'yes' },
+      { id: 'workspacesInUse', mac: 'yes', windows: 'yes', note: true },
+      { id: 'workspaceNumbers', mac: 'yes', windows: 'yes' },
+      { id: 'overview', mac: 'yes', windows: 'yes' },
+      { id: 'livePreviews', mac: 'partial', windows: 'yes', note: true },
     ],
   },
   {
-    name: { en: 'Input', es: 'Entrada' },
+    id: 'input',
     features: [
-      { name: { en: 'A shortcut for every action, all rebindable', es: 'Un atajo para cada acción, todos reasignables' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Warnings for shortcuts that clash', es: 'Avisos de atajos que chocan' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Three-finger swipe along the strip', es: 'Deslizar con tres dedos por la tira' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Mouse wheel along the strip', es: 'Rueda del ratón por la tira' }, mac: 'yes', windows: 'yes' },
-      {
-        name: { en: 'Take over the system’s window shortcuts', es: 'Sustituir los atajos de ventanas del sistema' },
-        mac: 'na', windows: 'yes',
-        note: { en: 'On Mac, Glide’s ⌃⌥ shortcuts don’t clash with macOS.', es: 'En Mac, los atajos ⌃⌥ de Glide no chocan con macOS.' },
-      },
+      { id: 'shortcuts', mac: 'yes', windows: 'yes' },
+      { id: 'clashWarnings', mac: 'yes', windows: 'yes' },
+      { id: 'swipe', mac: 'yes', windows: 'yes' },
+      { id: 'mouseWheel', mac: 'yes', windows: 'yes' },
+      { id: 'systemShortcuts', mac: 'na', windows: 'yes', note: true },
     ],
   },
   {
-    name: { en: 'Appearance', es: 'Apariencia' },
+    id: 'appearance',
     features: [
-      { name: { en: 'Gap between windows', es: 'Separación entre ventanas' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Focus ring in any color', es: 'Borde de foco de cualquier color' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Focus ring thickness', es: 'Grosor del borde de foco' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Dim unfocused windows', es: 'Atenuar las ventanas sin foco' }, mac: 'yes', windows: 'yes' },
+      { id: 'gap', mac: 'yes', windows: 'yes' },
+      { id: 'focusRingColor', mac: 'yes', windows: 'yes' },
+      { id: 'focusRingThickness', mac: 'yes', windows: 'yes' },
+      { id: 'dimUnfocused', mac: 'yes', windows: 'yes' },
     ],
   },
   {
-    name: { en: 'Behavior', es: 'Comportamiento' },
+    id: 'behavior',
     features: [
-      { name: { en: 'Per-app rules: float, tile, width, workspace', es: 'Reglas por app: flotar, mosaico, ancho, escritorio' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Apps reopen where you keep them', es: 'Las apps se reabren donde las tienes' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Windows put back when tiling stops or Glide quits', es: 'Ventanas devueltas al parar el mosaico o salir' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Crash watchdog that puts windows back', es: 'Vigilante que recoloca las ventanas si Glide falla' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Start at login', es: 'Abrir al iniciar sesión' }, mac: 'yes', windows: 'yes' },
-      { name: { en: 'Automatic updates', es: 'Actualizaciones automáticas' }, mac: 'yes', windows: 'yes' },
-      {
-        name: { en: 'Manage apps running as administrator', es: 'Gestionar apps que se ejecutan como administrador' },
-        mac: 'na', windows: 'yes',
-        note: { en: 'Windows only: restart Glide as administrator.', es: 'Solo Windows: reinicia Glide como administrador.' },
-      },
+      { id: 'appRules', mac: 'yes', windows: 'yes' },
+      { id: 'reopenApps', mac: 'yes', windows: 'yes' },
+      { id: 'restoreWindows', mac: 'yes', windows: 'yes' },
+      { id: 'watchdog', mac: 'yes', windows: 'yes' },
+      { id: 'startAtLogin', mac: 'yes', windows: 'yes' },
+      { id: 'autoUpdates', mac: 'yes', windows: 'yes' },
+      { id: 'runAsAdmin', mac: 'na', windows: 'yes', note: true },
     ],
   },
-];
+] as const satisfies readonly GroupDef[];
+
+type AnyFeature = (typeof groups)[number]['features'][number];
+
+export type GroupId = (typeof groups)[number]['id'];
+export type FeatureId = AnyFeature['id'];
+/** Features that carry a note. */
+export type NotedFeatureId = Extract<AnyFeature, { note: true }>['id'];

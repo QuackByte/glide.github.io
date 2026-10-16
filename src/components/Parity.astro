@@ -1,38 +1,31 @@
 ---
-import { groups, type Status } from '../data/features';
-import type { Lang } from '../i18n';
+import { groups, type NotedFeatureId } from '../data/features';
+import { messages, filler, type Lang } from '../i18n';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const es = lang === 'es';
-const labels: Record<Status, { en: string; es: string }> = {
-  yes: { en: 'Yes', es: 'Sí' },
-  partial: { en: 'Partly', es: 'En parte' },
-  planned: { en: 'Planned', es: 'Previsto' },
-  na: { en: 'Not needed', es: 'No aplica' },
-};
+const t = messages[lang];
+const fill = filler(lang);
 ---
 <div class="table-scroll">
   <table class="parity">
     <caption>
-      {es
-        ? 'Glide para Mac y Glide para Windows comparten el mismo motor y los mismos atajos (⌃⌥ en Mac, Win en Windows). Esto es lo que hace cada una hoy.'
-        : 'Glide for Mac and Glide for Windows share one engine and the same shortcuts (⌃⌥ on Mac, Win on Windows). This is what each does today.'}
+      {fill(t.parity.caption)}
     </caption>
     <thead>
-      <tr><th scope="col">{es ? 'Función' : 'Feature'}</th><th scope="col">Mac</th><th scope="col">Windows</th></tr>
+      <tr><th scope="col">{t.parity.feature}</th><th scope="col">Mac</th><th scope="col">Windows</th></tr>
     </thead>
     {groups.map((group) => (
       <tbody>
-        <tr><th scope="rowgroup" colspan="3">{group.name[lang]}</th></tr>
+        <tr><th scope="rowgroup" colspan="3">{t.features.groups[group.id]}</th></tr>
         {group.features.map((f) => (
           <tr>
             <th scope="row">
-              {f.name[lang]}
-              {f.note && <span class="note">{f.note[lang]}</span>}
+              {t.features.names[f.id]}
+              {'note' in f && <span class="note">{t.features.notes[f.id as NotedFeatureId]}</span>}
             </th>
-            <td><span class={`status status--${f.mac}`}>{labels[f.mac][lang]}</span></td>
-            <td><span class={`status status--${f.windows}`}>{labels[f.windows][lang]}</span></td>
+            <td><span class={`status status--${f.mac}`}>{t.parity.status[f.mac]}</span></td>
+            <td><span class={`status status--${f.windows}`}>{t.parity.status[f.windows]}</span></td>
           </tr>
         ))}
       </tbody>

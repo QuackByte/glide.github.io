@@ -1,44 +1,36 @@
 ---
-import { repos, github, requirements } from '../config';
-import type { Lang } from '../i18n';
+import { repos, github } from '../config';
+import { messages, filler, type Lang } from '../i18n';
 
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const es = lang === 'es';
+const t = messages[lang].downloads;
+const fill = filler(lang);
 const latest = (repo: string) => github(repo, '/releases/latest');
 ---
 <div class="downloads" data-downloads>
   <article class="download" data-platform="mac">
     <h3>Mac</h3>
-    <p>{requirements.mac[lang]}. {es ? 'Firmada y notarizada por Apple.' : 'Signed and notarized by Apple.'}</p>
+    <p>{t.macNote}</p>
     <p class="version" data-version hidden></p>
     <div class="actions">
-      <a class="button" href={latest(repos.mac)} data-asset="-macOS.zip">{es ? 'Descargar para Mac' : 'Download for Mac'}</a>
-      <a class="button button--quiet" href={github(repos.mac)}>{es ? 'Código fuente' : 'Source code'}</a>
+      <a class="button" href={latest(repos.mac)} data-asset="-macOS.zip">{t.macButton}</a>
+      <a class="button button--quiet" href={github(repos.mac)}>{t.source}</a>
     </div>
   </article>
   <article class="download" data-platform="windows">
     <h3>Windows</h3>
-    <p>{requirements.windows[lang]}. {es ? 'Se instala sin permisos de administrador.' : 'Installs without administrator rights.'}</p>
-    <p>
-      {es
-        ? 'Aún no está firmado con un certificado de código, así que Windows SmartScreen puede avisar la primera vez: elige Más información › Ejecutar de todas formas.'
-        : "Not code-signed yet, so Windows SmartScreen may warn the first time: choose More info › Run anyway."}
-    </p>
+    <p>{t.windowsNote}</p>
+    <p>{t.windowsWarning}</p>
     <p class="version" data-version hidden></p>
     <div class="actions">
-      <a class="button" href={latest(repos.windows)} data-asset="-x64-Setup.exe">{es ? 'Descargar (x64)' : 'Download (x64)'}</a>
-      <a class="button button--quiet" href={latest(repos.windows)} data-asset="-arm64-Setup.exe">{es ? 'Descargar (Arm)' : 'Download (Arm)'}</a>
-      <a class="button button--quiet" href={github(repos.windows)}>{es ? 'Código fuente' : 'Source code'}</a>
+      <a class="button" href={latest(repos.windows)} data-asset="-x64-Setup.exe">{t.windowsX64}</a>
+      <a class="button button--quiet" href={latest(repos.windows)} data-asset="-arm64-Setup.exe">{t.windowsArm}</a>
+      <a class="button button--quiet" href={github(repos.windows)}>{t.source}</a>
     </div>
   </article>
 </div>
-<p class="meta muted">
-  {es
-    ? 'Las dos se actualizan solas. Cada versión, con sus notas y sumas de verificación, está en GitHub: '
-    : 'Both keep themselves up to date. Every release, with its notes and checksums, is on GitHub: '}
-  <a href={github(repos.mac, '/releases')}>Mac</a>, <a href={github(repos.windows, '/releases')}>Windows</a>.
-</p>
+<p class="meta muted" set:html={fill(t.releasesHtml)} />
 
 <script>
   // The buttons link to each repository's latest release page. Where GitHub answers, point them

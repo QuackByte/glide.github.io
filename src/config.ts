@@ -6,11 +6,6 @@ export const repos = {
 
 export const github = (repo: string, path = '') => `https://github.com/${repo}${path}`;
 
-export const requirements = {
-  mac: { en: 'macOS 27 or later, Apple silicon', es: 'macOS 27 o posterior, Apple silicon' },
-  windows: { en: 'Windows 11, x64 or Arm', es: 'Windows 11, x64 o Arm' },
-};
-
 export const owner = {
   brand: 'Quackbyte',
   brandUrl: 'https://quackbyte.dev/',
