@@ -23,7 +23,7 @@ export const pt: Messages = {
   home: {
     title: 'Glide: um gerenciador de janelas com rolagem para Mac e Windows',
     description:
-      'O Glide organiza suas janelas em colunas numa faixa horizontal sem fim, pela qual você desliza com o teclado. Gratuito e de código aberto.',
+      'O Glide organiza suas janelas em colunas numa faixa horizontal sem fim, pela qual você desliza com o teclado, ou as organiza todas em mosaico numa tela. Gratuito e de código aberto.',
     hero: {
       title: 'Suas janelas, em fila. Glide.',
       lede: 'O Glide coloca cada janela em uma coluna numa faixa horizontal sem fim e leva você de uma a outra com o teclado ou o trackpad. Chega de janelas empilhadas umas sobre as outras. Para Mac e Windows.',
@@ -131,6 +131,7 @@ export const pt: Messages = {
       stacks: 'Pilhas: várias janelas em uma coluna',
       tabs: 'Colunas com abas',
       widths: 'Larguras predefinidas, largura total e centralização',
+      tiledLayout: 'Layout em mosaico ou faixa com rolagem, por espaço de trabalho',
       resize: 'Redimensionar uma coluna arrastando a borda',
       floating: 'Janelas flutuantes',
       slideAnimation: 'Animação de deslize',
@@ -159,6 +160,8 @@ export const pt: Messages = {
       runAsAdmin: 'Gerenciar apps executados como administrador',
     },
     notes: {
+      tiledLayout:
+        'No Windows, Win+Ctrl+T alterna o espaço de trabalho; no Mac, ⌃⌥T. No mosaico, todas as colunas dividem a tela, sem rolagem. Cada espaço de trabalho mantém o próprio layout, e Configurações › Geral › Layout define o dos novos.',
       workspacesInUse:
         'No Windows, o ícone da bandeja mostra uma grade 3×3 dos nove espaços de trabalho, com os que estão em uso acesos. O Glide para Mac mostra os números na barra de menus.',
       livePreviews: 'No Mac, com a permissão de Gravação de Tela; sem ela, aparecem os ícones dos apps.',

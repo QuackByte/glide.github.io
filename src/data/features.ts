@@ -37,6 +37,7 @@ export const groups = [
       { id: 'stacks', mac: 'yes', windows: 'yes' },
       { id: 'tabs', mac: 'yes', windows: 'yes' },
       { id: 'widths', mac: 'yes', windows: 'yes' },
+      { id: 'tiledLayout', mac: 'yes', windows: 'yes', note: true },
       { id: 'resize', mac: 'yes', windows: 'yes' },
       { id: 'floating', mac: 'yes', windows: 'yes' },
       { id: 'slideAnimation', mac: 'yes', windows: 'yes' },

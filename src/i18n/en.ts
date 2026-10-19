@@ -56,7 +56,7 @@ export const en = {
   home: {
     title: 'Glide: a scrolling window manager for Mac and Windows',
     description:
-      'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard. Free and open source.',
+      'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard, or tiles them all on one screen. Free and open source.',
     hero: {
       title: 'Your windows, in a row. Glide.',
       lede: 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. No more windows piled on windows. For Mac and Windows.',
@@ -164,6 +164,7 @@ export const en = {
       stacks: 'Stacks: several windows in one column',
       tabs: 'Tabbed columns',
       widths: 'Width presets, full width and centering',
+      tiledLayout: 'Tiled layout, or the scrolling strip, per workspace',
       resize: 'Resize a column by dragging its edge',
       floating: 'Floating windows',
       slideAnimation: 'Slide animation',
@@ -192,6 +193,8 @@ export const en = {
       runAsAdmin: 'Manage apps running as administrator',
     } satisfies Record<FeatureId, string>,
     notes: {
+      tiledLayout:
+        'On Windows, Win+Ctrl+T switches the workspace; on Mac, ⌃⌥T. In the tiled layout every column shares the screen, with no scrolling. Each workspace keeps its own layout, and Settings › General › Layout sets what new ones start with.',
       workspacesInUse:
         'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
       livePreviews: 'On Mac, with the Screen Recording permission; app icons without it.',

@@ -23,7 +23,7 @@ export const zh: Messages = {
   home: {
     title: 'Glide：适用于 Mac 和 Windows 的滚动式窗口管理器',
     description:
-      'Glide 把窗口排成一条无限延伸的横向条带上的多个列，用键盘就能在其中滑动穿梭。免费且开源。',
+      'Glide 把窗口排成一条无限延伸的横向条带上的多个列，用键盘就能在其中滑动穿梭，也可以把它们全部平铺在一个屏幕上。免费且开源。',
     hero: {
       title: '窗口排成一行，轻松滑动。Glide。',
       lede: 'Glide 把每个窗口放进无限延伸的横向条带上的一列，让你用键盘或触控板在窗口间穿梭。再也没有窗口层层堆叠的烦恼。适用于 Mac 和 Windows。',
@@ -131,6 +131,7 @@ export const zh: Messages = {
       stacks: '堆叠：多个窗口放在同一列',
       tabs: '标签页列',
       widths: '预设宽度、全宽和居中',
+      tiledLayout: '平铺布局或滚动条带，按工作区设置',
       resize: '拖动列的边缘来调整大小',
       floating: '浮动窗口',
       slideAnimation: '滑动动画',
@@ -159,6 +160,8 @@ export const zh: Messages = {
       runAsAdmin: '管理以管理员身份运行的 App',
     },
     notes: {
+      tiledLayout:
+        '在 Windows 上按 Win+Ctrl+T 切换工作区，在 Mac 上按 ⌃⌥T。平铺布局中所有列共享屏幕，无需滚动。每个工作区都会保留自己的布局，“设置 › 常规 › 布局”可决定新工作区的初始布局。',
       workspacesInUse:
         '在 Windows 上，通知区域图标会以 3×3 网格显示九个工作区，正在使用的会亮起。Mac 版 Glide 则在菜单栏中显示它们的编号。',
       livePreviews: '在 Mac 上需要屏幕录制权限；没有该权限时显示 App 图标。',

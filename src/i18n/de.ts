@@ -23,7 +23,7 @@ export const de: Messages = {
   home: {
     title: 'Glide: ein scrollender Fenstermanager für Mac und Windows',
     description:
-      'Glide ordnet deine Fenster als Spalten auf einem endlosen horizontalen Band an, über das du mit der Tastatur gleitest. Kostenlos und Open Source.',
+      'Glide ordnet deine Fenster als Spalten auf einem endlosen horizontalen Band an, über das du mit der Tastatur gleitest, oder kachelt sie alle auf einem Bildschirm. Kostenlos und Open Source.',
     hero: {
       title: 'Deine Fenster in einer Reihe. Glide.',
       lede: 'Glide setzt jedes Fenster in eine Spalte auf einem endlosen horizontalen Band und bringt dich per Tastatur oder Trackpad von Fenster zu Fenster. Schluss mit Fenstern, die sich gegenseitig verdecken. Für Mac und Windows.',
@@ -131,6 +131,7 @@ export const de: Messages = {
       stacks: 'Stapel: mehrere Fenster in einer Spalte',
       tabs: 'Spalten mit Tabs',
       widths: 'Breitenvorgaben, volle Breite und Zentrieren',
+      tiledLayout: 'Gekachelte Anordnung oder scrollendes Band, pro Arbeitsbereich',
       resize: 'Spaltengröße durch Ziehen am Rand ändern',
       floating: 'Schwebende Fenster',
       slideAnimation: 'Gleitanimation',
@@ -159,6 +160,8 @@ export const de: Messages = {
       runAsAdmin: 'Apps verwalten, die als Administrator laufen',
     },
     notes: {
+      tiledLayout:
+        'Unter Windows schaltet Win+Strg+T den Arbeitsbereich um, am Mac ⌃⌥T. In der gekachelten Anordnung teilen sich alle Spalten den Bildschirm, ohne Scrollen. Jeder Arbeitsbereich behält seine Anordnung; unter Einstellungen › Allgemein › Anordnung legst du fest, womit neue starten.',
       workspacesInUse:
         'Unter Windows zeigt das Symbol im Infobereich ein 3×3-Raster der neun Arbeitsbereiche, wobei die genutzten leuchten. Glide für Mac zeigt ihre Nummern in der Menüleiste.',
       livePreviews: 'Auf dem Mac mit der Berechtigung „Bildschirmaufnahme“; ohne sie werden App-Symbole angezeigt.',

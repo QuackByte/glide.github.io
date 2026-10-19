@@ -23,7 +23,7 @@ export const ko: Messages = {
   home: {
     title: 'Glide: Mac과 Windows를 위한 스크롤형 창 관리자',
     description:
-      'Glide는 창을 끝없이 이어진 가로 스트립 위에 열로 배치하고, 키보드로 그 사이를 미끄러지듯 이동하게 해 줍니다. 무료 오픈 소스입니다.',
+      'Glide는 창을 끝없이 이어진 가로 스트립 위에 열로 배치하고, 키보드로 그 사이를 미끄러지듯 이동하게 해 주고, 원한다면 한 화면에 모두 타일로 배치합니다. 무료 오픈 소스입니다.',
     hero: {
       title: '창을 한 줄로. Glide.',
       lede: 'Glide는 모든 창을 끝없이 이어진 가로 스트립의 열에 놓고, 키보드나 트랙패드로 창 사이를 이동하게 해 줍니다. 창 위에 창이 겹쳐 쌓일 일이 없습니다. Mac과 Windows에서 사용할 수 있습니다.',
@@ -131,6 +131,7 @@ export const ko: Messages = {
       stacks: '스택: 한 열에 여러 창',
       tabs: '탭 열',
       widths: '너비 프리셋, 전체 너비, 가운데 맞춤',
+      tiledLayout: '타일 레이아웃 또는 스크롤 스트립, 워크스페이스별',
       resize: '가장자리를 드래그하여 열 크기 조절',
       floating: '플로팅 창',
       slideAnimation: '슬라이드 애니메이션',
@@ -159,6 +160,8 @@ export const ko: Messages = {
       runAsAdmin: '관리자 권한으로 실행되는 앱 관리',
     } satisfies Record<FeatureId, string>,
     notes: {
+      tiledLayout:
+        'Windows에서는 Win+Ctrl+T, Mac에서는 ⌃⌥T로 워크스페이스를 전환합니다. 타일 레이아웃에서는 모든 열이 화면을 나눠 쓰므로 스크롤이 필요 없습니다. 각 워크스페이스는 자신의 레이아웃을 유지하며, 설정 › 일반 › 레이아웃에서 새 워크스페이스의 시작 레이아웃을 고릅니다.',
       workspacesInUse:
         'Windows에서는 알림 영역 아이콘에 워크스페이스 아홉 개가 3×3 격자로 표시되며 사용 중인 워크스페이스에 불이 켜집니다. Mac용 Glide는 메뉴 막대에 워크스페이스 번호를 표시합니다.',
       livePreviews: 'Mac에서는 화면 기록 권한이 있을 때만 제공되며, 권한이 없으면 앱 아이콘이 표시됩니다.',

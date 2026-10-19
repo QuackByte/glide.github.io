@@ -23,7 +23,7 @@ export const fr: Messages = {
   home: {
     title: 'Glide : un gestionnaire de fenêtres à défilement pour Mac et Windows',
     description:
-      'Glide dispose vos fenêtres en colonnes sur une bande horizontale sans fin que vous parcourez au clavier. Gratuit et open source.',
+      'Glide dispose vos fenêtres en colonnes sur une bande horizontale sans fin que vous parcourez au clavier, ou les met toutes en mosaïque sur un seul écran. Gratuit et open source.',
     hero: {
       title: 'Vos fenêtres, en file. Glide.',
       lede: 'Glide place chaque fenêtre dans une colonne sur une bande horizontale sans fin et vous fait passer de l’une à l’autre au clavier ou au trackpad. Fini les fenêtres empilées les unes sur les autres. Pour Mac et Windows.',
@@ -131,6 +131,7 @@ export const fr: Messages = {
       stacks: 'Piles : plusieurs fenêtres dans une colonne',
       tabs: 'Colonnes en onglets',
       widths: 'Largeurs prédéfinies, pleine largeur et centrage',
+      tiledLayout: 'Disposition en mosaïque ou bande à défilement, par bureau',
       resize: 'Redimensionner une colonne en faisant glisser son bord',
       floating: 'Fenêtres flottantes',
       slideAnimation: 'Animation de glissement',
@@ -159,6 +160,8 @@ export const fr: Messages = {
       runAsAdmin: 'Gestion des apps exécutées en tant qu’administrateur',
     },
     notes: {
+      tiledLayout:
+        'Sous Windows, Win+Ctrl+T bascule le bureau ; sur Mac, ⌃⌥T. En mosaïque, toutes les colonnes se partagent l’écran, sans défilement. Chaque bureau garde sa disposition, et Paramètres › Général › Disposition choisit celle des nouveaux.',
       workspacesInUse:
         'Sous Windows, l’icône de la zone de notification affiche une grille 3×3 des neuf bureaux, ceux qui sont utilisés étant allumés. Glide pour Mac affiche leurs numéros dans la barre des menus.',
       livePreviews: 'Sur Mac, avec l’autorisation d’enregistrement de l’écran ; sans elle, des icônes d’apps.',
