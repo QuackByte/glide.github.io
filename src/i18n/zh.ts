@@ -21,14 +21,14 @@ export const zh: Messages = {
   },
 
   home: {
-    title: 'Glide：适用于 Mac 和 Windows 的滚动式窗口管理器',
+    title: 'Glide：适用于 Mac 和 Windows 的滚动式与平铺式窗口管理器',
     description:
       'Glide 把窗口排成一条无限延伸的横向条带上的多个列，用键盘就能在其中滑动穿梭，也可以把它们全部平铺在一个屏幕上。免费且开源。',
     hero: {
       title: '窗口排成一行，轻松滑动。Glide。',
-      lede: 'Glide 把每个窗口放进无限延伸的横向条带上的一列，让你用键盘或触控板在窗口间穿梭。再也没有窗口层层堆叠的烦恼。适用于 Mac 和 Windows。',
+      lede: 'Glide 把每个窗口放进无限延伸的横向条带上的一列，让你用键盘或触控板在窗口间穿梭。也可以把工作区切换为平铺，让所有窗口都显示在屏幕上。适用于 Mac 和 Windows。',
       download: '免费下载',
-      meta: '开源，MIT 许可证。灵感来自 niri 和 PaperWM。',
+      meta: '开源，MIT 许可证。滚动灵感来自 niri 和 PaperWM，螺旋平铺则类似 dwindle 布局。',
     },
     how: {
       title: '工作原理',
@@ -44,6 +44,32 @@ export const zh: Messages = {
         {
           title: '无需拖动即可整理',
           body: '加按 Shift 就能带着窗口一起移动。你可以把多个窗口堆叠在一列中、变成标签页，或发送到另一个工作区。',
+        },
+      ],
+    },
+    tiling: {
+      title: "或者，全部平铺在一个屏幕上",
+      lede: "想一眼看到所有窗口？把任意工作区切换为平铺布局，Glide 会让它们全部显示在屏幕上，无需滚动。切换回来，窗口顺序保持不变。",
+      points: [
+        {
+          title: "自动排列的螺旋",
+          bodyHtml:
+            "一个窗口占满屏幕，两个窗口平分屏幕。从第三个开始，最后一个图块会再次分割，先上下，再左右，交替进行。无需管理任何树结构。",
+        },
+        {
+          title: "两列或三列",
+          bodyHtml:
+            "<kbd>{macTiledColumns}</kbd> 或 <kbd>{winTiledColumns}</kbd> 可在 2 列和 3 列之间切换。在超宽显示器上，Glide 会自动选择 3 列。",
+        },
+        {
+          title: "按方向移动",
+          bodyHtml:
+            "方向键聚焦该方向上的图块，加上 Shift 则与其交换位置。可将分割调整为 ⅓、½ 或 ⅔，把图块放大到全屏，还能把窗口合并为标签页。",
+        },
+        {
+          title: "每个工作区一种布局",
+          bodyHtml:
+            "每个显示器上的每个工作区都保留自己的布局，重启后也不变：一个工作区平铺编辑器和终端，下一个则是一排可滚动的浏览器。",
         },
       ],
     },
@@ -94,6 +120,12 @@ export const zh: Messages = {
     swipe: '或用三指轻扫',
   },
 
+  tiled: {
+    label: "以螺旋方式自动平铺的窗口：每个新窗口把最后一个图块一分为二",
+    toggle: "滚动 ⇄ 平铺",
+    columns: "2 列或 3 列",
+  },
+
   downloads: {
     macNote: 'macOS 27 或更高版本，Apple 芯片。已由 Apple 签名并公证。',
     macButton: '下载 Mac 版',
@@ -131,7 +163,9 @@ export const zh: Messages = {
       stacks: '堆叠：多个窗口放在同一列',
       tabs: '标签页列',
       widths: '预设宽度、全宽和居中',
-      tiledLayout: '平铺布局或滚动条带，按工作区设置',
+      tiledLayout: "螺旋平铺布局或滚动条带，按工作区设置",
+      tiledColumns: "平铺为 2 列或 3 列，超宽显示器上为 3 列",
+      tiledMoves: "平铺：按方向聚焦和交换、调整分割、放大图块",
       resize: '拖动列的边缘来调整大小',
       floating: '浮动窗口',
       slideAnimation: '滑动动画',
@@ -161,7 +195,7 @@ export const zh: Messages = {
     },
     notes: {
       tiledLayout:
-        '在 Windows 上按 Win+Ctrl+T 切换工作区，在 Mac 上按 ⌃⌥T。平铺布局中所有列共享屏幕，无需滚动。每个工作区都会保留自己的布局，“设置 › 常规 › 布局”可决定新工作区的初始布局。',
+        '在 Windows 上按 Win+Ctrl+T 切换工作区，在 Mac 上按 ⌃⌥T。平铺布局中所有窗口以螺旋方式排满屏幕，无需滚动。每个工作区都会保留自己的布局，“设置 › 常规 › 布局”可决定新工作区的初始布局。',
       workspacesInUse:
         '在 Windows 上，通知区域图标会以 3×3 网格显示九个工作区，正在使用的会亮起。Mac 版 Glide 则在菜单栏中显示它们的编号。',
       livePreviews: '在 Mac 上需要屏幕录制权限；没有该权限时显示 App 图标。',

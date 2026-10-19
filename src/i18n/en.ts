@@ -26,6 +26,8 @@
 //     {githubPrivacy} {aepd}              external privacy pages
 //     {macMod} {macOverview}              ⌃⌥ and ⌃⌥O
 //     {winKey} {winOverview}              Win and Win+Tab
+//     {macTiled} {macTiledColumns}        ⌃⌥T and ⌃⌥G
+//     {winTiled} {winTiledColumns}        Win+Ctrl+T and Win+Ctrl+G
 //     {appData} {localAppData}            Windows folders shown in the privacy policy
 //     {date}                              only in privacy.updated: the formatted date
 //
@@ -54,14 +56,14 @@ export const en = {
   },
 
   home: {
-    title: 'Glide: a scrolling window manager for Mac and Windows',
+    title: 'Glide: a scrolling and tiling window manager for Mac and Windows',
     description:
       'Glide lays your windows out as columns on an endless horizontal strip that you glide through with the keyboard, or tiles them all on one screen. Free and open source.',
     hero: {
       title: 'Your windows, in a row. Glide.',
-      lede: 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. No more windows piled on windows. For Mac and Windows.',
+      lede: 'Glide puts every window in a column on an endless horizontal strip and moves you through them with the keyboard or trackpad. Or tile a workspace so every window fits on screen. For Mac and Windows.',
       download: 'Download free',
-      meta: 'Open source, MIT license. In the style of niri and PaperWM.',
+      meta: 'Open source, MIT license. Scrolls like niri and PaperWM, tiles like a dwindle layout.',
     },
     how: {
       title: 'How it works',
@@ -77,6 +79,32 @@ export const en = {
         {
           title: 'Arrange without dragging',
           body: 'Add Shift to take the window with you. Stack windows in a column, turn them into tabs, or send them to another workspace.',
+        },
+      ],
+    },
+    tiling: {
+      title: 'Or tile it all on one screen',
+      lede: 'Want every window in sight? Switch any workspace to the tiled layout and Glide fits them all on screen, with nothing to scroll. Switch back and they keep their order.',
+      points: [
+        {
+          title: 'A spiral that tiles itself',
+          bodyHtml:
+            'One window fills the screen and two share it. From the third on, the last tile splits again, top and bottom, then side by side. No trees to manage.',
+        },
+        {
+          title: 'Two columns, or three',
+          bodyHtml:
+            '<kbd>{macTiledColumns}</kbd> or <kbd>{winTiledColumns}</kbd> switches between 2 and 3 columns. On an ultrawide display, Glide picks 3 for you.',
+        },
+        {
+          title: 'Move by direction',
+          bodyHtml:
+            'The arrows focus the tile on that side, and Shift swaps it there. Resize a split to ⅓, ½ or ⅔, zoom a tile to fill the screen, and keep windows together as tabs.',
+        },
+        {
+          title: 'One layout per workspace',
+          bodyHtml:
+            'Each workspace on each display keeps its own layout, even after a restart: your editor and terminals tiled on one, a scrolling strip of browsers on the next.',
         },
       ],
     },
@@ -127,6 +155,12 @@ export const en = {
     swipe: 'or swipe three fingers',
   },
 
+  tiled: {
+    label: 'Windows tiling themselves in a spiral: each new window splits the last tile in two',
+    toggle: 'scrolling ⇄ tiled',
+    columns: '2 or 3 columns',
+  },
+
   downloads: {
     macNote: 'macOS 27 or later, Apple silicon. Signed and notarized by Apple.',
     macButton: 'Download for Mac',
@@ -164,7 +198,9 @@ export const en = {
       stacks: 'Stacks: several windows in one column',
       tabs: 'Tabbed columns',
       widths: 'Width presets, full width and centering',
-      tiledLayout: 'Tiled layout, or the scrolling strip, per workspace',
+      tiledLayout: 'Tiled spiral layout, or the scrolling strip, per workspace',
+      tiledColumns: 'Tiled with 2 or 3 columns, 3 on ultrawide displays',
+      tiledMoves: 'Tiled: focus and swap by direction, resize splits, zoom a tile',
       resize: 'Resize a column by dragging its edge',
       floating: 'Floating windows',
       slideAnimation: 'Slide animation',
@@ -194,7 +230,7 @@ export const en = {
     } satisfies Record<FeatureId, string>,
     notes: {
       tiledLayout:
-        'On Windows, Win+Ctrl+T switches the workspace; on Mac, ⌃⌥T. In the tiled layout every column shares the screen, with no scrolling. Each workspace keeps its own layout, and Settings › General › Layout sets what new ones start with.',
+        'On Windows, Win+Ctrl+T switches the workspace; on Mac, ⌃⌥T. In the tiled layout every window fits on screen in a spiral, with no scrolling. Each workspace keeps its own layout, and Settings › General › Layout sets what new ones start with.',
       workspacesInUse:
         'On Windows the tray icon shows a 3×3 grid of the nine workspaces, with the ones in use lit. Glide for Mac shows their numbers in the menu bar.',
       livePreviews: 'On Mac, with the Screen Recording permission; app icons without it.',

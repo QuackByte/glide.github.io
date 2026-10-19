@@ -21,14 +21,14 @@ export const de: Messages = {
   },
 
   home: {
-    title: 'Glide: ein scrollender Fenstermanager für Mac und Windows',
+    title: 'Glide: ein scrollender und kachelnder Fenstermanager für Mac und Windows',
     description:
       'Glide ordnet deine Fenster als Spalten auf einem endlosen horizontalen Band an, über das du mit der Tastatur gleitest, oder kachelt sie alle auf einem Bildschirm. Kostenlos und Open Source.',
     hero: {
       title: 'Deine Fenster in einer Reihe. Glide.',
-      lede: 'Glide setzt jedes Fenster in eine Spalte auf einem endlosen horizontalen Band und bringt dich per Tastatur oder Trackpad von Fenster zu Fenster. Schluss mit Fenstern, die sich gegenseitig verdecken. Für Mac und Windows.',
+      lede: 'Glide setzt jedes Fenster in eine Spalte auf einem endlosen horizontalen Band und bringt dich per Tastatur oder Trackpad von Fenster zu Fenster. Oder kachle einen Arbeitsbereich, damit alle Fenster auf den Bildschirm passen. Für Mac und Windows.',
       download: 'Kostenlos herunterladen',
-      meta: 'Open Source, MIT-Lizenz. Im Stil von niri und PaperWM.',
+      meta: 'Open Source, MIT-Lizenz. Scrollt wie niri und PaperWM, kachelt spiralförmig wie ein Dwindle-Layout.',
     },
     how: {
       title: 'So funktioniert es',
@@ -44,6 +44,32 @@ export const de: Messages = {
         {
           title: 'Anordnen ohne Ziehen',
           body: 'Mit der Umschalttaste nimmst du das Fenster mit. Stapele Fenster in einer Spalte, verwandle sie in Tabs oder schicke sie in einen anderen Arbeitsbereich.',
+        },
+      ],
+    },
+    tiling: {
+      title: "Oder alles gekachelt auf einem Bildschirm",
+      lede: "Alle Fenster im Blick? Schalte einen beliebigen Arbeitsbereich auf die gekachelte Anordnung, und Glide bringt sie alle auf den Bildschirm, ohne Scrollen. Schaltest du zurück, bleibt ihre Reihenfolge erhalten.",
+      points: [
+        {
+          title: "Eine Spirale, die sich selbst kachelt",
+          bodyHtml:
+            "Ein Fenster füllt den Bildschirm, zwei teilen ihn sich. Ab dem dritten teilt sich die letzte Kachel erneut, oben und unten, dann nebeneinander. Keine Bäume zu verwalten.",
+        },
+        {
+          title: "Zwei Spalten oder drei",
+          bodyHtml:
+            "<kbd>{macTiledColumns}</kbd> oder <kbd>{winTiledColumns}</kbd> wechselt zwischen 2 und 3 Spalten. Auf einem Ultrawide-Bildschirm wählt Glide 3 für dich.",
+        },
+        {
+          title: "Nach Richtung bewegen",
+          bodyHtml:
+            "Die Pfeiltasten fokussieren die Kachel auf dieser Seite, mit Umschalt tauschst du sie dorthin. Stelle eine Teilung auf ⅓, ½ oder ⅔, zoome eine Kachel auf den ganzen Bildschirm und fasse Fenster als Tabs zusammen.",
+        },
+        {
+          title: "Eine Anordnung pro Arbeitsbereich",
+          bodyHtml:
+            "Jeder Arbeitsbereich auf jedem Bildschirm behält seine Anordnung, auch nach einem Neustart: Editor und Terminals gekachelt auf dem einen, ein scrollendes Band voller Browser auf dem nächsten.",
         },
       ],
     },
@@ -94,6 +120,12 @@ export const de: Messages = {
     swipe: 'oder mit drei Fingern wischen',
   },
 
+  tiled: {
+    label: "Fenster, die sich spiralförmig selbst kacheln: Jedes neue Fenster teilt die letzte Kachel in zwei",
+    toggle: "scrollend ⇄ gekachelt",
+    columns: "2 oder 3 Spalten",
+  },
+
   downloads: {
     macNote: 'macOS 27 oder neuer, Apple Silicon. Von Apple signiert und notarisiert.',
     macButton: 'Für Mac herunterladen',
@@ -131,7 +163,9 @@ export const de: Messages = {
       stacks: 'Stapel: mehrere Fenster in einer Spalte',
       tabs: 'Spalten mit Tabs',
       widths: 'Breitenvorgaben, volle Breite und Zentrieren',
-      tiledLayout: 'Gekachelte Anordnung oder scrollendes Band, pro Arbeitsbereich',
+      tiledLayout: "Gekachelte Spirale oder scrollendes Band, pro Arbeitsbereich",
+      tiledColumns: "Gekachelt mit 2 oder 3 Spalten, 3 auf Ultrawide-Bildschirmen",
+      tiledMoves: "Gekachelt: nach Richtung fokussieren und tauschen, Teilungen ändern, eine Kachel zoomen",
       resize: 'Spaltengröße durch Ziehen am Rand ändern',
       floating: 'Schwebende Fenster',
       slideAnimation: 'Gleitanimation',
@@ -161,7 +195,7 @@ export const de: Messages = {
     },
     notes: {
       tiledLayout:
-        'Unter Windows schaltet Win+Strg+T den Arbeitsbereich um, am Mac ⌃⌥T. In der gekachelten Anordnung teilen sich alle Spalten den Bildschirm, ohne Scrollen. Jeder Arbeitsbereich behält seine Anordnung; unter Einstellungen › Allgemein › Anordnung legst du fest, womit neue starten.',
+        'Unter Windows schaltet Win+Strg+T den Arbeitsbereich um, am Mac ⌃⌥T. In der gekachelten Anordnung passen alle Fenster spiralförmig auf den Bildschirm, ohne Scrollen. Jeder Arbeitsbereich behält seine Anordnung; unter Einstellungen › Allgemein › Anordnung legst du fest, womit neue starten.',
       workspacesInUse:
         'Unter Windows zeigt das Symbol im Infobereich ein 3×3-Raster der neun Arbeitsbereiche, wobei die genutzten leuchten. Glide für Mac zeigt ihre Nummern in der Menüleiste.',
       livePreviews: 'Auf dem Mac mit der Berechtigung „Bildschirmaufnahme“; ohne sie werden App-Symbole angezeigt.',

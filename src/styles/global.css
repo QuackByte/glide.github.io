@@ -188,6 +188,30 @@ details p { margin: 0.75rem 0 0; color: var(--ink-soft); }
   92%, 100% { left: 4%; }
 }
 
+/* Tiled demo: the same screen, with every window on it */
+.tiled {
+  position: relative; aspect-ratio: 16 / 10; overflow: hidden;
+  background: var(--midnight); border-radius: 18px;
+  box-shadow: 0 24px 48px -24px rgb(27 31 43 / 0.55);
+}
+.tiled-area { position: absolute; inset: 5%; }
+.tiled-tile {
+  position: absolute; padding: 0.8%; box-sizing: border-box;
+  transition-property: left, top, width, height, opacity;
+  transition-duration: 420ms; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tiled-tile > i { display: block; height: 100%; border-radius: 10px; background: #48516f; transition: background-color 200ms, box-shadow 200ms; }
+.tiled-tile.is-focus > i { background: var(--paper); box-shadow: 0 0 0 3px var(--orange); }
+.tiled-tile.is-hidden { opacity: 0; }
+
+/* The tiling band: the demo beside what it shows */
+.tiling { display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+@media (min-width: 60rem) { .tiling { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); } }
+.tiling .lede { font-size: var(--step-1); line-height: 1.45; color: var(--ink-soft); max-width: 40ch; margin: 0 0 2rem; }
+.points--two { gap: 1.75rem 2rem; }
+.points--two h3 { font-size: var(--step-0); }
+@media (min-width: 52rem) { .points--two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
 kbd {
   font-family: var(--mono); font-size: 0.85em; background: var(--paper); padding: 0.1em 0.45em; border-radius: 5px;
   box-shadow: 0 2px 0 var(--key-side); white-space: nowrap;
@@ -228,6 +252,7 @@ kbd {
 
 @media (prefers-reduced-motion: reduce) {
   .strip-track, .strip-thumb { animation: none; }
+  .tiled-tile, .tiled-tile > i { transition: none; }
 }
 
 /* Language picker (a <details> disclosure, no JavaScript) */

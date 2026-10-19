@@ -1,0 +1,76 @@
+---
+import { messages, tokens, type Lang } from '../i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = messages[lang].tiled;
+const keys = tokens(lang);
+
+type Rect = [left: number, top: number, width: number, height: number];
+
+// Glide's tiled layout, in percent of the screen: the first columns split the width evenly,
+// and the last one keeps splitting what's left, top and bottom, then side by side.
+function spiral(count: number, columns: number): Rect[] {
+  const cols = Math.min(count, columns);
+  const w = 100 / cols;
+  const rects: Rect[] = [];
+  for (let i = 0; i < cols - 1; i++) rects.push([i * w, 0, w, 100]);
+  let rest: Rect = [(cols - 1) * w, 0, w, 100];
+  for (let i = cols - 1; i < count; i++) {
+    const [x, y, rw, rh] = rest;
+    if (i === count - 1) { rects.push(rest); break; }
+    const horizontal = (i - cols + 1) % 2 === 0;
+    if (horizontal) { rects.push([x, y, rw, rh / 2]); rest = [x, y + rh / 2, rw, rh / 2]; }
+    else { rects.push([x, y, rw / 2, rh]); rest = [x + rw / 2, y, rw / 2, rh]; }
+  }
+  return rects;
+}
+
+const tiles = 5;
+// Windows open one by one on 2 columns, then the workspace switches to 3.
+const steps = [1, 2, 3, 4, 5].map((n) => ({ n, columns: 2 })).concat([{ n: 5, columns: 3 }]);
+const frames = steps.map(({ n, columns }) => {
+  const rects = spiral(n, columns);
+  // Windows yet to open wait inside the last tile, so they seem to split out of it.
+  return Array.from({ length: tiles }, (_, i) => ({ rect: rects[Math.min(i, n - 1)], shown: i < n, focus: i === n - 1 }));
+});
+const still = frames[4];
+const pos = ([l, tp, w, h]: Rect) => `left:${l}%;top:${tp}%;width:${w}%;height:${h}%`;
+---
+<figure class="demo">
+  <div class="tiled" role="img" aria-label={t.label} data-frames={JSON.stringify(frames)}>
+    <div class="tiled-area">
+      {still.map((tile) => (
+        <div class:list={['tiled-tile', { 'is-hidden': !tile.shown, 'is-focus': tile.focus }]} style={pos(tile.rect)}><i /></div>
+      ))}
+    </div>
+  </div>
+  <figcaption class="strip-keys">
+    <span><kbd>{keys.macTiled}</kbd> <kbd>{keys.winTiled}</kbd> {t.toggle}</span>
+    <span><kbd>{keys.macTiledColumns}</kbd> <kbd>{keys.winTiledColumns}</kbd> {t.columns}</span>
+  </figcaption>
+</figure>
+
+<script>
+  type Frame = { rect: [number, number, number, number]; shown: boolean; focus: boolean }[];
+
+  for (const demo of document.querySelectorAll<HTMLElement>('.tiled[data-frames]')) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) continue;
+    const frames: Frame[] = JSON.parse(demo.dataset.frames!);
+    const tiles = [...demo.querySelectorAll<HTMLElement>('.tiled-tile')];
+    let step = 0;
+    const show = () => {
+      frames[step].forEach(({ rect: [l, t, w, h], shown, focus }, i) => {
+        Object.assign(tiles[i].style, { left: `${l}%`, top: `${t}%`, width: `${w}%`, height: `${h}%` });
+        tiles[i].classList.toggle('is-hidden', !shown);
+        tiles[i].classList.toggle('is-focus', focus);
+      });
+      // Linger on the full layouts before starting over.
+      const last = step === frames.length - 1;
+      const wait = last || step === frames.length - 2 ? 2600 : 1300;
+      step = last ? 0 : step + 1;
+      setTimeout(show, wait);
+    };
+    show();
+  }
+</script>
