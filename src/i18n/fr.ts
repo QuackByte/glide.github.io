@@ -21,14 +21,14 @@ export const fr: Messages = {
   },
 
   home: {
-    title: 'Glide : un gestionnaire de fenêtres à défilement pour Mac et Windows',
+    title: 'Glide : un gestionnaire de fenêtres à défilement et en mosaïque pour Mac et Windows',
     description:
       'Glide dispose vos fenêtres en colonnes sur une bande horizontale sans fin que vous parcourez au clavier, ou les met toutes en mosaïque sur un seul écran. Gratuit et open source.',
     hero: {
       title: 'Vos fenêtres, en file. Glide.',
-      lede: 'Glide place chaque fenêtre dans une colonne sur une bande horizontale sans fin et vous fait passer de l’une à l’autre au clavier ou au trackpad. Fini les fenêtres empilées les unes sur les autres. Pour Mac et Windows.',
+      lede: 'Glide place chaque fenêtre dans une colonne sur une bande horizontale sans fin et vous fait passer de l’une à l’autre au clavier ou au trackpad. Ou passez un bureau en mosaïque pour que toutes les fenêtres tiennent à l’écran. Pour Mac et Windows.',
       download: 'Télécharger gratuitement',
-      meta: 'Open source, licence MIT. Dans l’esprit de niri et PaperWM.',
+      meta: 'Open source, licence MIT. Défile dans l’esprit de niri et PaperWM, se met en mosaïque en spirale comme une disposition dwindle.',
     },
     how: {
       title: 'Comment ça marche',
@@ -44,6 +44,32 @@ export const fr: Messages = {
         {
           title: 'Organisez sans glisser-déposer',
           body: 'Ajoutez Maj pour emmener la fenêtre avec vous. Empilez des fenêtres dans une colonne, transformez-les en onglets ou envoyez-les vers un autre bureau.',
+        },
+      ],
+    },
+    tiling: {
+      title: "Ou tout en mosaïque sur un écran",
+      lede: "Envie de voir toutes vos fenêtres ? Passez n’importe quel bureau en mosaïque et Glide les fait toutes tenir à l’écran, sans rien à faire défiler. Revenez en arrière et elles gardent leur ordre.",
+      points: [
+        {
+          title: "Une spirale qui s’organise toute seule",
+          bodyHtml:
+            "Une fenêtre remplit l’écran, deux se le partagent. À partir de la troisième, la dernière tuile se divise à nouveau, en haut et en bas, puis côte à côte. Aucun arbre à gérer.",
+        },
+        {
+          title: "Deux colonnes, ou trois",
+          bodyHtml:
+            "<kbd>{macTiledColumns}</kbd> ou <kbd>{winTiledColumns}</kbd> bascule entre 2 et 3 colonnes. Sur un écran ultra-large, Glide en choisit 3 pour vous.",
+        },
+        {
+          title: "Déplacez-vous par direction",
+          bodyHtml:
+            "Les flèches activent la tuile de ce côté, et avec Maj vous l’échangez. Réglez une division sur ⅓, ½ ou ⅔, agrandissez une tuile en plein écran et regroupez des fenêtres en onglets.",
+        },
+        {
+          title: "Une disposition par bureau",
+          bodyHtml:
+            "Chaque bureau de chaque écran garde sa disposition, même après un redémarrage : éditeur et terminaux en mosaïque sur l’un, une bande de navigateurs sur le suivant.",
         },
       ],
     },
@@ -94,6 +120,12 @@ export const fr: Messages = {
     swipe: 'ou balayez avec trois doigts',
   },
 
+  tiled: {
+    label: "Des fenêtres qui se placent en spirale : chaque nouvelle fenêtre coupe la dernière tuile en deux",
+    toggle: "défilement ⇄ mosaïque",
+    columns: "2 ou 3 colonnes",
+  },
+
   downloads: {
     macNote: 'macOS 27 ou version ultérieure, puce Apple. Signé et notarisé par Apple.',
     macButton: 'Télécharger pour Mac',
@@ -131,7 +163,9 @@ export const fr: Messages = {
       stacks: 'Piles : plusieurs fenêtres dans une colonne',
       tabs: 'Colonnes en onglets',
       widths: 'Largeurs prédéfinies, pleine largeur et centrage',
-      tiledLayout: 'Disposition en mosaïque ou bande à défilement, par bureau',
+      tiledLayout: "Mosaïque en spirale ou bande à défilement, par bureau",
+      tiledColumns: "Mosaïque sur 2 ou 3 colonnes, 3 sur les écrans ultra-larges",
+      tiledMoves: "Mosaïque : activer et échanger par direction, régler les divisions, agrandir une tuile",
       resize: 'Redimensionner une colonne en faisant glisser son bord',
       floating: 'Fenêtres flottantes',
       slideAnimation: 'Animation de glissement',
@@ -161,7 +195,7 @@ export const fr: Messages = {
     },
     notes: {
       tiledLayout:
-        'Sous Windows, Win+Ctrl+T bascule le bureau ; sur Mac, ⌃⌥T. En mosaïque, toutes les colonnes se partagent l’écran, sans défilement. Chaque bureau garde sa disposition, et Paramètres › Général › Disposition choisit celle des nouveaux.',
+        'Sous Windows, Win+Ctrl+T bascule le bureau ; sur Mac, ⌃⌥T. En mosaïque, toutes les fenêtres tiennent à l’écran en spirale, sans défilement. Chaque bureau garde sa disposition, et Paramètres › Général › Disposition choisit celle des nouveaux.',
       workspacesInUse:
         'Sous Windows, l’icône de la zone de notification affiche une grille 3×3 des neuf bureaux, ceux qui sont utilisés étant allumés. Glide pour Mac affiche leurs numéros dans la barre des menus.',
       livePreviews: 'Sur Mac, avec l’autorisation d’enregistrement de l’écran ; sans elle, des icônes d’apps.',

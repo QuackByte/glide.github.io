@@ -20,14 +20,14 @@ export const es: Messages = {
   },
 
   home: {
-    title: 'Glide: gestor de ventanas con desplazamiento para Mac y Windows',
+    title: 'Glide: gestor de ventanas con desplazamiento y mosaico para Mac y Windows',
     description:
       'Glide coloca tus ventanas en columnas sobre una tira horizontal sin fin y te deslizas por ellas con el teclado, o las reparte todas en una pantalla. Gratis y de código abierto.',
     hero: {
       title: 'Tus ventanas, en fila. Deslízate.',
-      lede: 'Glide coloca cada ventana en una columna de una tira horizontal sin fin y te mueve por ellas con el teclado o el trackpad. Sin ventanas encima de otras. Para Mac y Windows.',
+      lede: 'Glide coloca cada ventana en una columna de una tira horizontal sin fin y te mueve por ellas con el teclado o el trackpad. O pon un escritorio en mosaico para que todas las ventanas quepan en la pantalla. Para Mac y Windows.',
       download: 'Descargar gratis',
-      meta: 'Código abierto, licencia MIT. Al estilo de niri y PaperWM.',
+      meta: 'Código abierto, licencia MIT. Se desplaza como niri y PaperWM, y hace mosaico en espiral como un layout dwindle.',
     },
     how: {
       title: 'Cómo funciona',
@@ -43,6 +43,32 @@ export const es: Messages = {
         {
           title: 'Ordena sin arrastrar',
           body: 'Añade Mayúsculas para llevarte la ventana. Apila ventanas en una columna, conviértelas en pestañas o envíalas a otro escritorio.',
+        },
+      ],
+    },
+    tiling: {
+      title: "O todo en mosaico en una pantalla",
+      lede: "¿Quieres ver todas las ventanas? Pon cualquier escritorio en mosaico y Glide las encaja todas en la pantalla, sin nada que desplazar. Vuelve atrás y conservan su orden.",
+      points: [
+        {
+          title: "Una espiral que se ordena sola",
+          bodyHtml:
+            "Una ventana llena la pantalla y dos la comparten. A partir de la tercera, el último mosaico se vuelve a dividir, arriba y abajo y luego lado a lado. Sin árboles que gestionar.",
+        },
+        {
+          title: "Dos columnas, o tres",
+          bodyHtml:
+            "<kbd>{macTiledColumns}</kbd> o <kbd>{winTiledColumns}</kbd> cambia entre 2 y 3 columnas. En una pantalla ultrapanorámica, Glide elige 3 por ti.",
+        },
+        {
+          title: "Muévete por dirección",
+          bodyHtml:
+            "Las flechas enfocan el mosaico de ese lado, y con Mayús lo intercambias. Ajusta una división a ⅓, ½ o ⅔, amplía un mosaico a toda la pantalla y agrupa ventanas en pestañas.",
+        },
+        {
+          title: "Una disposición por escritorio",
+          bodyHtml:
+            "Cada escritorio de cada pantalla conserva su disposición, incluso tras reiniciar: el editor y las terminales en mosaico en uno, una tira de navegadores en el siguiente.",
         },
       ],
     },
@@ -93,6 +119,12 @@ export const es: Messages = {
     swipe: 'o desliza tres dedos',
   },
 
+  tiled: {
+    label: "Ventanas que se colocan solas en espiral: cada ventana nueva divide en dos el último mosaico",
+    toggle: "desplazamiento ⇄ mosaico",
+    columns: "2 o 3 columnas",
+  },
+
   downloads: {
     macNote: 'macOS 27 o posterior, Apple silicon. Firmada y notarizada por Apple.',
     macButton: 'Descargar para Mac',
@@ -131,7 +163,9 @@ export const es: Messages = {
       stacks: 'Pilas: varias ventanas en una columna',
       tabs: 'Columnas con pestañas',
       widths: 'Anchos predefinidos, ancho completo y centrado',
-      tiledLayout: 'Disposición en mosaico o en tira desplazable, por escritorio',
+      tiledLayout: "Mosaico en espiral o tira desplazable, por escritorio",
+      tiledColumns: "Mosaico de 2 o 3 columnas, 3 en pantallas ultrapanorámicas",
+      tiledMoves: "Mosaico: enfocar e intercambiar por dirección, ajustar divisiones, ampliar un mosaico",
       resize: 'Cambiar el ancho arrastrando el borde',
       floating: 'Ventanas flotantes',
       slideAnimation: 'Animación de deslizamiento',
@@ -161,7 +195,7 @@ export const es: Messages = {
     },
     notes: {
       tiledLayout:
-        'En Windows, Win+Ctrl+T cambia el escritorio; en Mac, ⌃⌥T. En el mosaico todas las columnas comparten la pantalla, sin desplazarte. Cada escritorio conserva su disposición, y Configuración › General › Disposición define la de los nuevos.',
+        'En Windows, Win+Ctrl+T cambia el escritorio; en Mac, ⌃⌥T. En el mosaico todas las ventanas caben en la pantalla en espiral, sin desplazarte. Cada escritorio conserva su disposición, y Configuración › General › Disposición define la de los nuevos.',
       workspacesInUse:
         'En Windows, el icono de la bandeja muestra una cuadrícula de 3×3 con los nueve escritorios, iluminando los que están en uso. Glide para Mac muestra sus números en la barra de menús.',
       livePreviews: 'En Mac, con el permiso de Grabación de pantalla; iconos de app sin él.',

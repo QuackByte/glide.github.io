@@ -77,6 +77,8 @@ export function formatDate(iso: string, lang: Lang): string {
  * messages, so translators can't break them. Documented at the top of src/i18n/en.ts.
  */
 export function tokens(lang: Lang): Record<string, string> {
+  // German Windows keyboards label Ctrl as Strg.
+  const ctrl = lang === 'de' ? 'Strg' : 'Ctrl';
   return {
     mac: github(repos.mac),
     windows: github(repos.windows),
@@ -92,8 +94,12 @@ export function tokens(lang: Lang): Record<string, string> {
     aepd: 'https://www.aepd.es/',
     macMod: '⌃⌥',
     macOverview: '⌃⌥O',
+    macTiled: '⌃⌥T',
+    macTiledColumns: '⌃⌥G',
     winKey: 'Win',
     winOverview: 'Win+Tab',
+    winTiled: `Win+${ctrl}+T`,
+    winTiledColumns: `Win+${ctrl}+G`,
     appData: '%APPDATA%\\Glide',
     localAppData: '%LOCALAPPDATA%\\Glide',
   };

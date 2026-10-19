@@ -21,14 +21,14 @@ export const pt: Messages = {
   },
 
   home: {
-    title: 'Glide: um gerenciador de janelas com rolagem para Mac e Windows',
+    title: 'Glide: um gerenciador de janelas com rolagem e mosaico para Mac e Windows',
     description:
       'O Glide organiza suas janelas em colunas numa faixa horizontal sem fim, pela qual você desliza com o teclado, ou as organiza todas em mosaico numa tela. Gratuito e de código aberto.',
     hero: {
       title: 'Suas janelas, em fila. Glide.',
-      lede: 'O Glide coloca cada janela em uma coluna numa faixa horizontal sem fim e leva você de uma a outra com o teclado ou o trackpad. Chega de janelas empilhadas umas sobre as outras. Para Mac e Windows.',
+      lede: 'O Glide coloca cada janela em uma coluna numa faixa horizontal sem fim e leva você de uma a outra com o teclado ou o trackpad. Ou coloque um espaço de trabalho em mosaico para que todas as janelas caibam na tela. Para Mac e Windows.',
       download: 'Baixar grátis',
-      meta: 'Código aberto, licença MIT. No estilo do niri e do PaperWM.',
+      meta: 'Código aberto, licença MIT. Rola como o niri e o PaperWM, e organiza em mosaico espiral como um layout dwindle.',
     },
     how: {
       title: 'Como funciona',
@@ -44,6 +44,32 @@ export const pt: Messages = {
         {
           title: 'Organize sem arrastar',
           body: 'Adicione Shift para levar a janela junto. Empilhe janelas em uma coluna, transforme-as em abas ou envie-as para outro espaço de trabalho.',
+        },
+      ],
+    },
+    tiling: {
+      title: "Ou tudo em mosaico numa tela",
+      lede: "Quer ver todas as janelas? Coloque qualquer espaço de trabalho em mosaico e o Glide encaixa todas na tela, sem nada para rolar. Volte atrás e elas mantêm a ordem.",
+      points: [
+        {
+          title: "Uma espiral que se organiza sozinha",
+          bodyHtml:
+            "Uma janela ocupa a tela e duas a dividem. A partir da terceira, o último bloco se divide de novo, em cima e embaixo, depois lado a lado. Nenhuma árvore para gerenciar.",
+        },
+        {
+          title: "Duas colunas, ou três",
+          bodyHtml:
+            "<kbd>{macTiledColumns}</kbd> ou <kbd>{winTiledColumns}</kbd> alterna entre 2 e 3 colunas. Numa tela ultrawide, o Glide escolhe 3 para você.",
+        },
+        {
+          title: "Mova-se por direção",
+          bodyHtml:
+            "As setas focam o bloco daquele lado, e com Shift você troca de lugar com ele. Ajuste uma divisão para ⅓, ½ ou ⅔, amplie um bloco para a tela inteira e agrupe janelas em abas.",
+        },
+        {
+          title: "Um layout por espaço de trabalho",
+          bodyHtml:
+            "Cada espaço de trabalho de cada tela mantém o próprio layout, mesmo depois de reiniciar: editor e terminais em mosaico num, uma faixa de navegadores no seguinte.",
         },
       ],
     },
@@ -94,6 +120,12 @@ export const pt: Messages = {
     swipe: 'ou deslize com três dedos',
   },
 
+  tiled: {
+    label: "Janelas que se organizam sozinhas em espiral: cada nova janela divide o último bloco em dois",
+    toggle: "rolagem ⇄ mosaico",
+    columns: "2 ou 3 colunas",
+  },
+
   downloads: {
     macNote: 'macOS 27 ou posterior, Apple silicon. Assinado e notarizado pela Apple.',
     macButton: 'Baixar para Mac',
@@ -131,7 +163,9 @@ export const pt: Messages = {
       stacks: 'Pilhas: várias janelas em uma coluna',
       tabs: 'Colunas com abas',
       widths: 'Larguras predefinidas, largura total e centralização',
-      tiledLayout: 'Layout em mosaico ou faixa com rolagem, por espaço de trabalho',
+      tiledLayout: "Mosaico em espiral ou faixa com rolagem, por espaço de trabalho",
+      tiledColumns: "Mosaico com 2 ou 3 colunas, 3 em telas ultrawide",
+      tiledMoves: "Mosaico: focar e trocar por direção, ajustar divisões, ampliar um bloco",
       resize: 'Redimensionar uma coluna arrastando a borda',
       floating: 'Janelas flutuantes',
       slideAnimation: 'Animação de deslize',
@@ -161,7 +195,7 @@ export const pt: Messages = {
     },
     notes: {
       tiledLayout:
-        'No Windows, Win+Ctrl+T alterna o espaço de trabalho; no Mac, ⌃⌥T. No mosaico, todas as colunas dividem a tela, sem rolagem. Cada espaço de trabalho mantém o próprio layout, e Configurações › Geral › Layout define o dos novos.',
+        'No Windows, Win+Ctrl+T alterna o espaço de trabalho; no Mac, ⌃⌥T. No mosaico, todas as janelas cabem na tela em espiral, sem rolagem. Cada espaço de trabalho mantém o próprio layout, e Configurações › Geral › Layout define o dos novos.',
       workspacesInUse:
         'No Windows, o ícone da bandeja mostra uma grade 3×3 dos nove espaços de trabalho, com os que estão em uso acesos. O Glide para Mac mostra os números na barra de menus.',
       livePreviews: 'No Mac, com a permissão de Gravação de Tela; sem ela, aparecem os ícones dos apps.',

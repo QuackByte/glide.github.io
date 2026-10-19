@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import StripDemo from '../components/StripDemo.astro';
+import TiledDemo from '../components/TiledDemo.astro';
 import Downloads from '../components/Downloads.astro';
 import Parity from '../components/Parity.astro';
 import { repos, github } from '../config';
@@ -35,6 +36,24 @@ const fill = filler(lang);
         </li>
       ))}
     </ol>
+  </section>
+
+  <section class="band" id="tiling" aria-labelledby="tiling-title">
+    <div class="tiling">
+      <TiledDemo lang={lang} />
+      <div>
+        <h2 id="tiling-title">{t.tiling.title}</h2>
+        <p class="lede">{t.tiling.lede}</p>
+        <div class="points points--two">
+          {t.tiling.points.map((point) => (
+            <div>
+              <h3>{point.title}</h3>
+              <p set:html={fill(point.bodyHtml)} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   </section>
 
   <section class="band" aria-labelledby="why">
