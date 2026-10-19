@@ -22,7 +22,7 @@ export const es: Messages = {
   home: {
     title: 'Glide: gestor de ventanas con desplazamiento para Mac y Windows',
     description:
-      'Glide coloca tus ventanas en columnas sobre una tira horizontal sin fin y te deslizas por ellas con el teclado. Gratis y de código abierto.',
+      'Glide coloca tus ventanas en columnas sobre una tira horizontal sin fin y te deslizas por ellas con el teclado, o las reparte todas en una pantalla. Gratis y de código abierto.',
     hero: {
       title: 'Tus ventanas, en fila. Deslízate.',
       lede: 'Glide coloca cada ventana en una columna de una tira horizontal sin fin y te mueve por ellas con el teclado o el trackpad. Sin ventanas encima de otras. Para Mac y Windows.',
@@ -131,6 +131,7 @@ export const es: Messages = {
       stacks: 'Pilas: varias ventanas en una columna',
       tabs: 'Columnas con pestañas',
       widths: 'Anchos predefinidos, ancho completo y centrado',
+      tiledLayout: 'Disposición en mosaico o en tira desplazable, por escritorio',
       resize: 'Cambiar el ancho arrastrando el borde',
       floating: 'Ventanas flotantes',
       slideAnimation: 'Animación de deslizamiento',
@@ -159,6 +160,8 @@ export const es: Messages = {
       runAsAdmin: 'Gestionar apps que se ejecutan como administrador',
     },
     notes: {
+      tiledLayout:
+        'En Windows, Win+Ctrl+T cambia el escritorio; en Mac, ⌃⌥T. En el mosaico todas las columnas comparten la pantalla, sin desplazarte. Cada escritorio conserva su disposición, y Configuración › General › Disposición define la de los nuevos.',
       workspacesInUse:
         'En Windows, el icono de la bandeja muestra una cuadrícula de 3×3 con los nueve escritorios, iluminando los que están en uso. Glide para Mac muestra sus números en la barra de menús.',
       livePreviews: 'En Mac, con el permiso de Grabación de pantalla; iconos de app sin él.',
